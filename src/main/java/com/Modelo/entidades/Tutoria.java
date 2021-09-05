@@ -3,6 +3,7 @@ package com.Modelo.entidades;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import javax.persistence.*;
 
 /**
@@ -18,6 +19,15 @@ public class Tutoria implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idTutoria")
 	private Integer id;
+	@ManyToOne
+	@JoinColumn(name = "docente")
+	private Docente docente;
+	@ManyToOne
+	@JoinColumn(name = "estudiante")
+	private Estudiante estudiante;
+	@ManyToOne
+	@JoinColumn(name = "horario")
+	private Horario horario;
 	@Column(name = "estado")
 	private String estado;
 	
