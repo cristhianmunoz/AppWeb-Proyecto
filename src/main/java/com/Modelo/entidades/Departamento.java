@@ -21,5 +21,6 @@ public class Departamento implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idDepartamento")
 	private Integer id;
-	
+	@Column(name = "Departamento")
+	private String nombre;
 }

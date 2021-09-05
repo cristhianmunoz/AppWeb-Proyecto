@@ -8,7 +8,7 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@Table(name = "Administrador")
 public class Administrador extends Persona implements Serializable {
 
 	
