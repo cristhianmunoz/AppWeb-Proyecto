@@ -21,7 +21,10 @@ public class Horario implements Serializable {
 	private int horaInicio;
 	@Column(name = "horaFin")
 	private int horaFin;
-	
+	@ManyToOne
+	@JoinColumn(name = "disponibilidadTutoria")
+	private DisponibilidadTutoria disponbilidadTutoria;
+
 
 	public Horario() {
 		super();
