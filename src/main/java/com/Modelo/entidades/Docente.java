@@ -2,6 +2,7 @@ package com.Modelo.entidades;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -20,6 +21,8 @@ public class Docente extends Persona implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "departamento")
 	private Departamento departamento;
+	@ManyToMany(targetEntity = DisponibilidadTutoria.class)
+	private Set<DisponibilidadTutoria> disponibilidadTutoriaSet;
 	
 	private List<DisponibilidadTutoria> disponibilidadTutorias ;
 	public Docente() {

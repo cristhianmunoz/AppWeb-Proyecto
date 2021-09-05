@@ -3,6 +3,8 @@ package com.Modelo.entidades;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Set;
+
 import javax.persistence.*;
 
 /**
@@ -21,6 +23,8 @@ public class DisponibilidadTutoria implements Serializable {
 	@Column(name = "diaSemana")
 	private String diaSemana;
 
+	@ManyToMany(targetEntity = Docente.class)
+	private Set<Docente> docenteSet;
 
 	public DisponibilidadTutoria() {
 		super();
