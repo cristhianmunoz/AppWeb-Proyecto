@@ -15,6 +15,12 @@ public class Docente extends Persona implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
+	
+	//Foreign Key Departamento Muchos Profes - Un departamento
+	@ManyToOne
+	@JoinColumn(name = "departamento")
+	private Departamento departamento;
+	
 	private List<DisponibilidadTutoria> disponibilidadTutorias ;
 	public Docente() {
 		super();
