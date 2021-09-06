@@ -1,9 +1,9 @@
 package com.controlador.conexion;
 
-import com.Modelo.dao.DAOFactory;
-import com.Modelo.entidades.Departamento;
-import com.Modelo.entidades.DisponibilidadTutoria;
-import com.Modelo.entidades.Horario;
+import com.modelo.dao.DAOFactory;
+import com.modelo.entidades.Departamento;
+import com.modelo.entidades.DisponibilidadTutoria;
+import com.modelo.entidades.Horario;
 
 public class generandoTablas {
 
