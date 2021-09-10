@@ -40,13 +40,13 @@ public class JPADAOFactory extends DAOFactory{
 	@Override
 	public DocenteDAO getDocenteDAO() {
 		// TODO Auto-generated method stub
-		return null;
+		return new JPADocenteDAO();
 	}
 
 	@Override
 	public EstudianteDAO getEstudianteDAO() {
 		// TODO Auto-generated method stub
-		return null;
+		return new JPAEstudianteDAO();
 	}
 
 	@Override

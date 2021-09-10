@@ -1,9 +1,8 @@
 package com.controlador.conexion;
 
-import com.modelo.dao.DAOFactory;
-import com.modelo.entidades.Departamento;
-import com.modelo.entidades.DisponibilidadTutoria;
-import com.modelo.entidades.Horario;
+import com.Modelo.dao.DAOFactory;
+import com.Modelo.entidades.DisponibilidadTutoria;
+import com.Modelo.entidades.Horario;
 
 public class generandoTablas {
 
@@ -24,7 +23,7 @@ public class generandoTablas {
 		DAOFactory.getFactory().getDisponibilidadTutoriaDAO().create(disponibilidad4);
 		DAOFactory.getFactory().getDisponibilidadTutoriaDAO().create(disponibilidad5);
 		Horario h1 = new Horario();
-		h1.
+		
 		
 	}
 
