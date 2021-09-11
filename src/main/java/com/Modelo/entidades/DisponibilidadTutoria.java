@@ -22,6 +22,12 @@ public class DisponibilidadTutoria implements Serializable {
 	private Integer id;
 	@Column(name = "diaSemana")
 	private String diaSemana;
+	
+	@Column(name = "horarioInicio")
+	private Horario horarioInicio;
+	
+	@Column(name = "horarioFin")
+	private Horario horarioFin;
 
 	@ManyToMany(targetEntity = Docente.class)
 	private Set<Docente> docenteSet;
@@ -43,6 +49,25 @@ public class DisponibilidadTutoria implements Serializable {
 	public void setDiaSemana(String diaSemana) {
 		this.diaSemana = diaSemana;
 	}
+	
+	public Horario getHorarioInicio() {
+		return horarioInicio;
+	}
+	
+	public void setHorarioInicio(Horario horarioInicio) {
+		this.horarioInicio = horarioInicio;
+	}
+	
+	public Horario getHorarioFin() {
+		return horarioFin;
+	}
+	
+	public void setHorarioFin(Horario horarioFin) {
+		this.horarioFin = horarioFin;
+	}
+	
+	
+	
 	public int hashCode() {
 		int hash = 0;
 		hash += (id != null ? id.hashCode() : 0);

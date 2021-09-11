@@ -17,10 +17,11 @@ public class Horario implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idHorario")
 	private Integer id;
-	@Column(name = "horaInicio")
-	private int horaInicio;
-	@Column(name = "horaFin")
-	private int horaFin;
+	@Column(name = "hora")
+	private int hora;
+	@Column(name = "minuto")
+	private int minuto;
+	
 	@ManyToOne
 	@JoinColumn(name = "disponibilidadTutoria")
 	private DisponibilidadTutoria disponbilidadTutoria;
@@ -36,23 +37,22 @@ public class Horario implements Serializable {
 	public void setId(Integer id) {
 		this.id = id;
 	}   
-	public int getHoraInicio() {
-		return this.horaInicio;
+	
+	public int getHora() {
+		return hora;
 	}
-
-	public void setHoraInicio(int horaInicio) {
-		this.horaInicio = horaInicio;
-	}   
-	public int getHoraFin() {
-		return this.horaFin;
+	public void setHora(int hora) {
+		this.hora = hora;
 	}
-
-	public void setHoraFin(int horaFin) {
-		this.horaFin = horaFin;
+	public int getMinuto() {
+		return minuto;
+	}
+	public void setMinuto(int minuto) {
+		this.minuto = minuto;
 	}
 	@Override
 	public String toString() {
-		return "Horario horaInicio=" + horaInicio + ", horaFin=" + horaFin ;
+		return "Horario hora=" + hora + ", minuto=" + minuto ;
 	}
 	public int hashCode() {
 		int hash = 0;
