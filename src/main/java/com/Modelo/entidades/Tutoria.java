@@ -30,7 +30,9 @@ public class Tutoria implements Serializable {
 	private Horario horario;
 	@Column(name = "estado")
 	private String estado;
-	
+	@ManyToOne
+	@JoinColumn(name="fecha")
+	private Fecha fecha = new Fecha();
 
 	public Tutoria() {
 		super();
