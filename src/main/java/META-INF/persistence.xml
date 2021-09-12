@@ -10,6 +10,7 @@
 		<class>com.Modelo.entidades.Fecha</class>
 		<class>com.Modelo.entidades.Horario</class>
 		<class>com.Modelo.entidades.Tutoria</class>
+		<class>com.Modelo.entidades.Docente_Disponibilidad</class>
 		<properties>
 			<property name="javax.persistence.schema-generation.database.action" value="create"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dbTutoriasProyecto"/>

@@ -29,7 +29,18 @@ public class Horario implements Serializable {
 
 	public Horario() {
 		super();
-	}   
+	}  
+	
+	
+	
+	public Horario(int hora, int minuto) {
+		super();
+		this.hora = hora;
+		this.minuto = minuto;
+	}
+
+
+
 	public Integer getId() {
 		return this.id;
 	}

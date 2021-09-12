@@ -34,7 +34,17 @@ public class DisponibilidadTutoria implements Serializable {
 
 	public DisponibilidadTutoria() {
 		super();
-	}   
+	}
+	
+	public DisponibilidadTutoria(String diaSemana, Horario horarioInicio, Horario horarioFin) {
+		super();
+		this.diaSemana = diaSemana;
+		this.horarioInicio = horarioInicio;
+		this.horarioFin = horarioFin;
+	}
+
+
+
 	public Integer getId() {
 		return this.id;
 	}

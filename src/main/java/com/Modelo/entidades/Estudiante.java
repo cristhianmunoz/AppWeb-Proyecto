@@ -17,5 +17,9 @@ public class Estudiante extends Persona implements Serializable {
 	public Estudiante() {
 		super();
 	}
+	
+	public boolean cambiarClave(String claveAnterior, String claveNueva) {
+		return true;
+	}
    
 }
