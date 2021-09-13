@@ -23,6 +23,7 @@ public class generandoTablas {
 		DAOFactory.getFactory().getDisponibilidadTutoriaDAO().create(disponibilidad4);
 		DAOFactory.getFactory().getDisponibilidadTutoriaDAO().create(disponibilidad5);
 		Horario h1 = new Horario();
+		DAOFactory.getFactory().getDepartamentoDAO().get();
 		
 		
 	}

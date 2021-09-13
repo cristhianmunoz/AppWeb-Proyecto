@@ -8,7 +8,7 @@ import javax.persistence.*;
  *
  */
 @Entity
-@Table(name = "Estudiante")
+@DiscriminatorValue("Estudiante")
 public class Estudiante extends Persona implements Serializable {
 
 	

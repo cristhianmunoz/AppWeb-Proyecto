@@ -22,9 +22,7 @@ public class JPAAdministradorDAO extends JPAGenericDAO<Administrador, Integer> i
 	}
 	
 	public List<Persona> listarUsuarios(){
-		List <Administrador> administradores = DAOFactory.getFactory().getAdministradorDAO().get();
-		List <Persona> docentes = DAOFactory.getFactory().getDocenteDAO().get();
-		List <Persona> estudiantes = DAOFactory.getFactory().getEstudianteDAO().get();
+		
 		return null;
 	}
 

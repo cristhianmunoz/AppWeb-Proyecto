@@ -29,8 +29,7 @@ public class DisponibilidadTutoria implements Serializable {
 	@Column(name = "horarioFin")
 	private Horario horarioFin;
 
-	@ManyToMany(targetEntity = Docente.class)
-	private Set<Docente> docenteSet;
+
 
 	public DisponibilidadTutoria() {
 		super();

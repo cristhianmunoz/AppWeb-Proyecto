@@ -51,6 +51,31 @@ public class Tutoria implements Serializable {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
+	
+	public Docente getDocente() {
+		return docente;
+	}
+	public void setDocente(Docente docente) {
+		this.docente = docente;
+	}
+	public Estudiante getEstudiante() {
+		return estudiante;
+	}
+	public void setEstudiante(Estudiante estudiante) {
+		this.estudiante = estudiante;
+	}
+	public Horario getHorario() {
+		return horario;
+	}
+	public void setHorario(Horario horario) {
+		this.horario = horario;
+	}
+	public Fecha getFecha() {
+		return fecha;
+	}
+	public void setFecha(Fecha fecha) {
+		this.fecha = fecha;
+	}
 	@Override
 	public String toString() {
 		return "Tutoria estado=" + estado ;

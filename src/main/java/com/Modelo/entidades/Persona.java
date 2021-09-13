@@ -10,7 +10,7 @@ import javax.persistence.*;
  *
  */
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Persona implements Serializable {
 
 	private static final long serialVersionUID = 1L;
