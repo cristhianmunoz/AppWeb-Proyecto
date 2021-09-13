@@ -19,27 +19,23 @@ public class ListarTutoriasController extends HttpServlet {
 	private static final long serialVersionUID = 1L; 
 	
     public ListarTutoriasController() {
-        //super();
+
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		procesar(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//doGet(request, response);
 		procesar(request, response);
 	}
 	
 	protected void procesar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		List<Tutoria> tutorias = DAOFactory.getFactory().getTutoriaDAO().get();
-		
-		//2. Llamo a la vista Listar Tutorias para que me presente los datos que obtuve del modelo
+
 		request.setAttribute("tutorias", tutorias);
-		String path = "jsp/listarTutorias.jsp";
-		getServletContext().getRequestDispatcher(path).forward(request, response);
+		getServletContext().getRequestDispatcher("jsp/listarTutorias.jsp").forward(request, response);
 		
 	}
 }
