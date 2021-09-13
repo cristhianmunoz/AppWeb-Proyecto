@@ -1,9 +1,6 @@
 package com.Modelo.entidades;
 
 import java.io.Serializable;
-import java.util.List;
-import java.util.Set;
-
 import javax.persistence.*;
 
 /**
@@ -29,6 +26,14 @@ public class Docente extends Persona implements Serializable {
 		public Docente(String cedula, String clave, String nombre, String apellido,Departamento departamento) {
 			super(cedula, clave, nombre, apellido);
 			this.departamento=departamento;
+		}
+
+		public Departamento getDepartamento() {
+			return departamento;
+		}
+
+		public void setDepartamento(Departamento departamento) {
+			this.departamento = departamento;
 		}
 
 		

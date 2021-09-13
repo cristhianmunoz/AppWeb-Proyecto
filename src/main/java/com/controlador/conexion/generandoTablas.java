@@ -1,24 +1,19 @@
 package com.controlador.conexion;
 
+import java.util.List;
+
 import com.Modelo.dao.DAOFactory;
-import com.Modelo.dao.GenericDAO;
-import com.Modelo.entidades.Departamento;
-import com.Modelo.entidades.DisponibilidadTutoria;
 import com.Modelo.entidades.Docente;
-import com.Modelo.entidades.Docente_Disponibilidad;
-import com.Modelo.entidades.Estudiante;
-import com.Modelo.entidades.Horario;
+import com.Modelo.entidades.Persona;
 
 public class generandoTablas {
 
 	public static void main(String[] args) {
 		
-		System.out.println( DAOFactory.getFactory().getDepartamentoDAO().getDepartamentoByNombre("Proyecto Inclusión Digital"));
-		System.out.println( DAOFactory.getFactory().getEstudianteDAO().getByCedula("0000000000"));
-		System.out.println( DAOFactory.getFactory().getDocenteDAO().getByCedula("222222222"));
-		System.out.println( DAOFactory.getFactory().getAdministradorDAO().getByCedula("1234567890"));
-		
-		
+		List<Persona> personas =  DAOFactory.getFactory().getAdministradorDAO().listarUsuarios();
+		for (Persona persona : personas) {
+			System.out.println(persona);
+		}
 	}
 
 }
