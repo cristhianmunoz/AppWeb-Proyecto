@@ -1,10 +1,14 @@
 package com.Modelo.jpa;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.Query;
 
 import com.Modelo.dao.DocenteDAO;
 import com.Modelo.entidades.DisponibilidadTutoria;
 import com.Modelo.entidades.Docente;
+import com.Modelo.entidades.Docente_Disponibilidad;
 
 public class JPADocenteDAO extends JPAPersonaDAO<Docente, Integer> implements DocenteDAO {
 
@@ -21,7 +25,17 @@ public class JPADocenteDAO extends JPAPersonaDAO<Docente, Integer> implements Do
 	}
 
 	public List <DisponibilidadTutoria> getDisponibilidadByDocente(Docente docente){
-		return null;
+		String sentenciaJPQL = "SELECT e FROM Docente_Disponibilidad e WHERE e.idDocente = :param_docente";
+		Query query = em.createQuery(sentenciaJPQL);
+		query.setParameter("param_docente", Docente_Disponibilidad.class);
+		@SuppressWarnings("unchecked")
+		List<Docente_Disponibilidad> resultado = query.getResultList();
+		List<DisponibilidadTutoria> disponibilidad = new ArrayList<DisponibilidadTutoria>();
+		for(Docente_Disponibilidad d: resultado) {
+			disponibilidad.add(d.getDisponibilidad());
+		}
+		
+		return disponibilidad;
 	}
 
 	@Override
