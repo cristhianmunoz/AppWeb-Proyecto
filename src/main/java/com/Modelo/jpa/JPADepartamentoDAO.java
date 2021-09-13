@@ -3,14 +3,13 @@ package com.Modelo.jpa;
 import javax.persistence.Query;
 
 import com.Modelo.dao.DepartamentoDAO;
-import com.Modelo.entidades.Administrador;
 import com.Modelo.entidades.Departamento;
 
 public class JPADepartamentoDAO extends JPAGenericDAO<Departamento, Integer> implements DepartamentoDAO {
 
 	public JPADepartamentoDAO() {
 		super(Departamento.class);
-		// TODO Auto-generated constructor stub
+		
 	}
 	public Departamento getDepartamentoByNombre(String nombreDepartamento) {
 		String sentenciaJPQL = "SELECT d FROM Departamento d WHERE d.Departamento = :param_nombre";
