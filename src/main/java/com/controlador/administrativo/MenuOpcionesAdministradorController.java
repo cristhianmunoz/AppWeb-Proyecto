@@ -42,7 +42,6 @@ public class MenuOpcionesAdministradorController extends HttpServlet {
 	
 	private void procesar (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
 		
-		JPADAOFactory.getFactory().
 			getServletContext().getRequestDispatcher("/jsp/menuOpcionesA.jsp").forward(request, response);
 		
 	}

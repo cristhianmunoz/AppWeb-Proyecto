@@ -1,12 +1,15 @@
 package com.controlador.administrativo;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.Modelo.entidades.Persona;
 import com.Modelo.jpa.JPADAOFactory;
 
 /**
@@ -28,7 +31,7 @@ public class EliminarUsuarioController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		procesar(request, response);
+
 	}
 
 	/**
@@ -42,20 +45,19 @@ public class EliminarUsuarioController extends HttpServlet {
 		
 	}
 	
-private void procesar (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
-		
-		getServletContext().getRequestDispatcher("/jsp/eliminarUsuario.jsp").forward(request, response);
-		
-		}
 
-}
 
+	@SuppressWarnings("unchecked")
 	private void eliminar (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
-		int id = Integer.parseInt(request.getParameter("id")) ;
+		String cedula = request.getParameter("cedula") ;
 		
-		JPADAOFactory.getFactory().getPersonaDAO().deleteById(id);
-		
-		
+		try {
+			Persona persona = (Persona) JPADAOFactory.getFactory().getPersonaDAO().getByCedula(cedula);
+			JPADAOFactory.getFactory().getPersonaDAO().deleteById(persona.getId());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		request.getRequestDispatcher("/MenuOpcionesAdministradorController").forward(request, response);
 		
 		}

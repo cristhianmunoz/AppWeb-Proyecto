@@ -15,7 +15,7 @@ public class JPAAdministradorDAO extends JPAPersonaDAO<Administrador, Integer> i
 	
 	
 	@Override
-	public List<Persona> listarUsuarios(){
+	public  List<Persona> listarUsuarios(){
 		
 		return null;
 	}

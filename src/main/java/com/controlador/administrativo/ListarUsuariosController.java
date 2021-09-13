@@ -1,6 +1,8 @@
 package com.controlador.administrativo;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.Modelo.dao.DAOFactory;
-import com.Modelo.jpa.JPADAOFactory;
+import com.Modelo.entidades.Persona;
 
 /**
  * Servlet implementation class ListarUsuariosController
@@ -39,7 +41,7 @@ public class ListarUsuariosController extends HttpServlet {
 	}
 
 	private void procesar (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
-		List<Personas> listPersonas= JPADAOFactory.getFactory().getAdministradorDAO().listarUsuarios();
+		List<Persona> listPersonas= DAOFactory.getFactory().getAdministradorDAO().listarUsuarios();
 		
 		request.setAttribute("listPersonas", listPersonas);
 		getServletContext().getRequestDispatcher("/jsp/listarUsuarios.jsp").forward(request, response);
