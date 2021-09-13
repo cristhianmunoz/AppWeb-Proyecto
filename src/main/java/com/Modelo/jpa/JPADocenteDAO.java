@@ -2,12 +2,7 @@ package com.Modelo.jpa;
 
 import java.util.List;
 
-import javax.persistence.Query;
-import javax.print.Doc;
-
-import com.Modelo.dao.DAOFactory;
 import com.Modelo.dao.DocenteDAO;
-import com.Modelo.entidades.Departamento;
 import com.Modelo.entidades.DisponibilidadTutoria;
 import com.Modelo.entidades.Docente;
 
@@ -20,6 +15,7 @@ public class JPADocenteDAO extends JPAPersonaDAO<Docente, Integer> implements Do
 	
 	@Override
 	public List<Docente> get() {
+		@SuppressWarnings("unchecked")
 		List<Docente> docentes =em.createNativeQuery("select * from persona where tipoUsuario like 'Docente'",Docente.class).getResultList();
 		return docentes;
 	}
