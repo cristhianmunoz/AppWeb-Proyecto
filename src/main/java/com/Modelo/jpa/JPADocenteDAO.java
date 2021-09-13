@@ -25,9 +25,9 @@ public class JPADocenteDAO extends JPAPersonaDAO<Docente, Integer> implements Do
 	}
 
 	public List <DisponibilidadTutoria> getDisponibilidadByDocente(Docente docente){
-		String sentenciaJPQL = "SELECT e FROM Docente_Disponibilidad e WHERE e.idDocente = :param_docente";
+		String sentenciaJPQL = "SELECT e FROM Docente_Disponibilidad e WHERE e.docente = :param_docente";
 		Query query = em.createQuery(sentenciaJPQL);
-		query.setParameter("param_docente", Docente_Disponibilidad.class);
+		query.setParameter("param_docente", docente);
 		@SuppressWarnings("unchecked")
 		List<Docente_Disponibilidad> resultado = query.getResultList();
 		List<DisponibilidadTutoria> disponibilidad = new ArrayList<DisponibilidadTutoria>();

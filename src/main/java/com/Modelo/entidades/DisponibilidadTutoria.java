@@ -79,6 +79,12 @@ public class DisponibilidadTutoria implements Serializable {
 	
 	
 	
+	@Override
+	public String toString() {
+		return "DisponibilidadTutoria diaSemana=" + diaSemana + ", horarioInicio=" + horarioInicio + ", horarioFin="
+				+ horarioFin ;
+	}
+
 	public int hashCode() {
 		int hash = 0;
 		hash += (id != null ? id.hashCode() : 0);
