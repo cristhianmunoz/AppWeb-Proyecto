@@ -16,5 +16,6 @@ public abstract class DAOFactory {
 	public abstract FechaDAO getFechaDAO();
 	public abstract HorarioDAO getHorarioDAO();
 	public abstract TutoriaDAO getTutoriaDAO();
+	public abstract Docente_DisponibilidadDAO getDocente_DisponibilidadDAO();
 
 }

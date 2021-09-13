@@ -5,6 +5,7 @@ import com.Modelo.dao.DAOFactory;
 import com.Modelo.dao.DepartamentoDAO;
 import com.Modelo.dao.DisponibilidadTutoriaDAO;
 import com.Modelo.dao.DocenteDAO;
+import com.Modelo.dao.Docente_DisponibilidadDAO;
 import com.Modelo.dao.EstudianteDAO;
 import com.Modelo.dao.FechaDAO;
 import com.Modelo.dao.HorarioDAO;
@@ -66,6 +67,12 @@ public class JPADAOFactory extends DAOFactory{
 	public TutoriaDAO getTutoriaDAO() {
 		// TODO Auto-generated method stub
 		return new JPATutoriaDAO();
+	}
+
+	@Override
+	public Docente_DisponibilidadDAO getDocente_DisponibilidadDAO() {
+		// TODO Auto-generated method stub
+		return new JPADocente_DisponibilidadDAO();
 	}
 
 }

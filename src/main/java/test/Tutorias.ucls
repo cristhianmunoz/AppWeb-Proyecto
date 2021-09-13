@@ -21,7 +21,7 @@
   </interface>  
   <class id="3" language="java" name="com.Modelo.jpa.JPAGenericDAO" project="proyectoAppWeb" 
     file="/proyectoAppWeb/src/main/java/com/Modelo/jpa/JPAGenericDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="779" y="708"/>    
+    <position height="-1" width="-1" x="786" y="834"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="com.Modelo.jpa.JPADAOFactory" project="proyectoAppWeb" 
     file="/proyectoAppWeb/src/main/java/com/Modelo/jpa/JPADAOFactory.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1719" y="478"/>    
+    <position height="-1" width="-1" x="1835" y="474"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <interface id="5" language="java" name="com.Modelo.dao.DepartamentoDAO" project="proyectoAppWeb" 
     file="/proyectoAppWeb/src/main/java/com/Modelo/dao/DepartamentoDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="867" y="269"/>    
+    <position height="-1" width="-1" x="831" y="257"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </interface>  
   <interface id="6" language="java" name="com.Modelo.dao.FechaDAO" project="proyectoAppWeb" 
     file="/proyectoAppWeb/src/main/java/com/Modelo/dao/FechaDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1428" y="123"/>    
+    <position height="-1" width="-1" x="1258" y="256"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,7 +57,7 @@
   </interface>  
   <interface id="7" language="java" name="com.Modelo.dao.HorarioDAO" project="proyectoAppWeb" 
     file="/proyectoAppWeb/src/main/java/com/Modelo/dao/HorarioDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1280" y="223"/>    
+    <position height="-1" width="-1" x="1205" y="435"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -66,7 +66,7 @@
   </interface>  
   <class id="8" language="java" name="com.Modelo.jpa.JPADepartamentoDAO" project="proyectoAppWeb" 
     file="/proyectoAppWeb/src/main/java/com/Modelo/jpa/JPADepartamentoDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="952" y="463"/>    
+    <position height="-1" width="-1" x="886" y="401"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -76,7 +76,7 @@
   <interface id="9" language="java" name="com.Modelo.dao.DisponibilidadTutoriaDAO" project="proyectoAppWeb" 
     file="/proyectoAppWeb/src/main/java/com/Modelo/dao/DisponibilidadTutoriaDAO.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1104" y="309"/>    
+    <position height="-1" width="-1" x="1040" y="262"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -86,7 +86,7 @@
   <class id="10" language="java" name="com.Modelo.jpa.JPADisponibilidadTutoriaDAO" project="proyectoAppWeb" 
     file="/proyectoAppWeb/src/main/java/com/Modelo/jpa/JPADisponibilidadTutoriaDAO.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1121" y="625"/>    
+    <position height="-1" width="-1" x="1016" y="524"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -95,7 +95,7 @@
   </class>  
   <interface id="11" language="java" name="com.Modelo.dao.AdministradorDAO" project="proyectoAppWeb" 
     file="/proyectoAppWeb/src/main/java/com/Modelo/dao/AdministradorDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="12" y="230"/>    
+    <position height="-1" width="-1" x="93" y="324"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -104,7 +104,7 @@
   </interface>  
   <interface id="12" language="java" name="com.Modelo.dao.PersonaDAO" project="proyectoAppWeb" 
     file="/proyectoAppWeb/src/main/java/com/Modelo/dao/PersonaDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="294" y="192"/>    
+    <position height="-1" width="-1" x="413" y="164"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -113,7 +113,7 @@
   </interface>  
   <interface id="13" language="java" name="com.Modelo.dao.DocenteDAO" project="proyectoAppWeb" 
     file="/proyectoAppWeb/src/main/java/com/Modelo/dao/DocenteDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="206" y="333"/>    
+    <position height="-1" width="-1" x="262" y="327"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -132,7 +132,7 @@
   <interface id="15" language="java" name="com.Modelo.dao.Docente_DisponibilidadDAO" project="proyectoAppWeb" 
     file="/proyectoAppWeb/src/main/java/com/Modelo/dao/Docente_DisponibilidadDAO.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-135" y="88"/>    
+    <position height="-1" width="-1" x="-104" y="159"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -150,7 +150,7 @@
   </class>  
   <class id="17" language="java" name="com.Modelo.jpa.JPAPersonaDAO" project="proyectoAppWeb" 
     file="/proyectoAppWeb/src/main/java/com/Modelo/jpa/JPAPersonaDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="532" y="623"/>    
+    <position height="-1" width="-1" x="487" y="629"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -159,7 +159,7 @@
   </class>  
   <class id="18" language="java" name="com.Modelo.jpa.JPADocenteDAO" project="proyectoAppWeb" 
     file="/proyectoAppWeb/src/main/java/com/Modelo/jpa/JPADocenteDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="274" y="503"/>    
+    <position height="-1" width="-1" x="318" y="461"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -168,17 +168,17 @@
   </class>  
   <class id="19" language="java" name="com.Modelo.jpa.JPAAdministradorDAO" project="proyectoAppWeb" 
     file="/proyectoAppWeb/src/main/java/com/Modelo/jpa/JPAAdministradorDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="15" y="536"/>    
+    <position height="-1" width="-1" x="129" y="612"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="20" language="java" name="com.Modelo.jpa.JPADocente_AdministradorDAO" project="proyectoAppWeb" 
-    file="/proyectoAppWeb/src/main/java/com/Modelo/jpa/JPADocente_AdministradorDAO.java" binary="false" 
+  <class id="20" language="java" name="com.Modelo.jpa.JPADocente_DisponibilidadDAO" project="proyectoAppWeb" 
+    file="/proyectoAppWeb/src/main/java/com/Modelo/jpa/JPADocente_DisponibilidadDAO.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-167" y="750"/>    
+    <position height="-1" width="-1" x="0" y="810"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -187,7 +187,7 @@
   </class>  
   <class id="21" language="java" name="com.Modelo.jpa.JPAHorarioDAO" project="proyectoAppWeb" 
     file="/proyectoAppWeb/src/main/java/com/Modelo/jpa/JPAHorarioDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1292" y="435"/>    
+    <position height="-1" width="-1" x="1075" y="633"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -196,138 +196,168 @@
   </class>  
   <class id="22" language="java" name="com.Modelo.jpa.JPAFechaDAO" project="proyectoAppWeb" 
     file="/proyectoAppWeb/src/main/java/com/Modelo/jpa/JPAFechaDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1449" y="738"/>    
+    <position height="-1" width="-1" x="1235" y="677"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <realization id="23">    
+  <interface id="23" language="java" name="com.Modelo.dao.TutoriaDAO" project="proyectoAppWeb" 
+    file="/proyectoAppWeb/src/main/java/com/Modelo/dao/TutoriaDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1419" y="209"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="24" language="java" name="com.Modelo.jpa.JPATutoriaDAO" project="proyectoAppWeb" 
+    file="/proyectoAppWeb/src/main/java/com/Modelo/jpa/JPATutoriaDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1322" y="812"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <realization id="25">    
     <end type="SOURCE" refId="10"/>    
     <end type="TARGET" refId="9"/>  
   </realization>  
-  <generalization id="24">    
+  <generalization id="26">    
     <end type="SOURCE" refId="22"/>    
     <end type="TARGET" refId="3"/>  
   </generalization>  
-  <generalization id="25">    
+  <generalization id="27">    
     <end type="SOURCE" refId="18"/>    
     <end type="TARGET" refId="17"/>  
   </generalization>  
-  <generalization id="26">    
+  <generalization id="28">    
     <end type="SOURCE" refId="10"/>    
     <end type="TARGET" refId="3"/>  
   </generalization>  
-  <generalization id="27">    
+  <generalization id="29">    
     <end type="SOURCE" refId="13"/>    
     <end type="TARGET" refId="12"/>  
   </generalization>  
-  <realization id="28">    
+  <realization id="30">    
     <end type="SOURCE" refId="16"/>    
     <end type="TARGET" refId="14"/>  
   </realization>  
-  <generalization id="29">    
+  <realization id="31">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="23"/>  
+  </realization>  
+  <generalization id="32">    
     <end type="SOURCE" refId="11"/>    
     <end type="TARGET" refId="12"/>  
   </generalization>  
-  <generalization id="30">    
+  <generalization id="33">    
     <end type="SOURCE" refId="15"/>    
     <end type="TARGET" refId="2"/>  
   </generalization>  
-  <generalization id="31">    
+  <generalization id="34">    
     <end type="SOURCE" refId="12"/>    
     <end type="TARGET" refId="2"/>  
   </generalization>  
-  <realization id="32">    
+  <realization id="35">    
     <end type="SOURCE" refId="18"/>    
     <end type="TARGET" refId="13"/>  
   </realization>  
-  <generalization id="33">    
+  <generalization id="36">    
     <end type="SOURCE" refId="8"/>    
     <end type="TARGET" refId="3"/>  
   </generalization>  
-  <generalization id="34">    
+  <generalization id="37">    
     <end type="SOURCE" refId="7"/>    
     <end type="TARGET" refId="2"/>  
   </generalization>  
-  <generalization id="35">    
+  <generalization id="38">    
     <end type="SOURCE" refId="19"/>    
     <end type="TARGET" refId="17"/>  
   </generalization>  
-  <generalization id="36">    
+  <generalization id="39">    
     <end type="SOURCE" refId="20"/>    
     <end type="TARGET" refId="3"/>  
   </generalization>  
-  <generalization id="37">    
+  <generalization id="40">    
     <end type="SOURCE" refId="21"/>    
     <end type="TARGET" refId="3"/>  
   </generalization>  
-  <generalization id="38">    
+  <generalization id="41">    
     <end type="SOURCE" refId="6"/>    
     <end type="TARGET" refId="2"/>  
   </generalization>  
-  <realization id="39">    
+  <realization id="42">    
     <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="2"/>  
   </realization>  
-  <realization id="40">    
+  <realization id="43">    
     <end type="SOURCE" refId="20"/>    
     <end type="TARGET" refId="15"/>  
   </realization>  
-  <association id="41">    
+  <association id="44">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="42" name="factory">        
+      <attribute id="45" name="factory">        
         <position height="0" width="0" x="206" y="-1"/>      
       </attribute>      
-      <multiplicity id="43" minimum="0" maximum="1">        
+      <multiplicity id="46" minimum="0" maximum="1">        
         <position height="0" width="0" x="206" y="-1"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="44">    
+  <realization id="47">    
     <end type="SOURCE" refId="19"/>    
     <end type="TARGET" refId="11"/>  
   </realization>  
-  <generalization id="45">    
+  <generalization id="48">    
     <end type="SOURCE" refId="9"/>    
     <end type="TARGET" refId="2"/>  
   </generalization>  
-  <generalization id="46">    
+  <generalization id="49">    
     <end type="SOURCE" refId="17"/>    
     <end type="TARGET" refId="3"/>  
   </generalization>  
-  <generalization id="47">    
+  <generalization id="50">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="51">    
     <end type="SOURCE" refId="14"/>    
     <end type="TARGET" refId="12"/>  
   </generalization>  
-  <generalization id="48">    
+  <generalization id="52">    
     <end type="SOURCE" refId="5"/>    
     <end type="TARGET" refId="2"/>  
   </generalization>  
-  <generalization id="49">    
+  <generalization id="53">    
     <end type="SOURCE" refId="16"/>    
     <end type="TARGET" refId="17"/>  
   </generalization>  
-  <realization id="50">    
+  <realization id="54">    
     <end type="SOURCE" refId="21"/>    
     <end type="TARGET" refId="7"/>  
   </realization>  
-  <generalization id="51">    
+  <generalization id="55">    
     <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="1"/>  
   </generalization>  
-  <realization id="52">    
+  <generalization id="56">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <realization id="57">    
     <end type="SOURCE" refId="8"/>    
     <end type="TARGET" refId="5"/>  
   </realization>  
-  <realization id="53">    
+  <realization id="58">    
     <end type="SOURCE" refId="17"/>    
     <end type="TARGET" refId="12"/>  
   </realization>  
-  <realization id="54">    
+  <realization id="59">    
     <end type="SOURCE" refId="22"/>    
     <end type="TARGET" refId="6"/>  
   </realization>  
