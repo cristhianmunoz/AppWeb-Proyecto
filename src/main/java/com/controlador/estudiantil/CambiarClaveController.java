@@ -1,11 +1,18 @@
 package com.controlador.estudiantil;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.Modelo.dao.DAOFactory;
+import com.Modelo.entidades.Estudiante;
+import com.Modelo.entidades.Persona;
 
 /**
  * Servlet implementation class CambiarClaveController
@@ -18,24 +25,44 @@ public class CambiarClaveController extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public CambiarClaveController() {
-        super();
-        // TODO Auto-generated constructor stub
+        
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		procesar(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		
+		HttpSession session =  request.getSession();
+		Estudiante estudiante = (Estudiante) session.getAttribute("usuarioLogeado");
+		
+		String clave = request.getParameter("clave");
+		String claveanterior = estudiante.getClave();
+		
+		if(estudiante.cambiarClave(claveanterior, clave)) {
+			try {
+				DAOFactory.getFactory().getEstudianteDAO().update(estudiante);
+				request.getRequestDispatcher("/MenuOpcionesEstudianteController").forward(request, response);
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+				response.sendError(0);
+				request.getRequestDispatcher("/CambiarClaveController").forward(request, response);
+			}
+		}else {
+			response.sendError(0);
+			request.getRequestDispatcher("/CambiarClaveController").forward(request, response);
+		}
+	}
+	
+	private void procesar (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
+		
+			getServletContext().getRequestDispatcher("/jsp/cambiarClave.jsp").forward(request, response);
+		
 	}
 
 }
