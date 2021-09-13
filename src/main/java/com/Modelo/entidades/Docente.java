@@ -31,6 +31,14 @@ public class Docente extends Persona implements Serializable {
 			this.departamento=departamento;
 		}
 
+		public Departamento getDepartamento() {
+			return departamento;
+		}
+
+		public void setDepartamento(Departamento departamento) {
+			this.departamento = departamento;
+		}
+
 		
 
 
