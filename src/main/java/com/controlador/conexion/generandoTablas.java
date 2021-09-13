@@ -13,10 +13,10 @@ public class generandoTablas {
 
 	public static void main(String[] args) {
 		
-		DAOFactory.getFactory().getDepartamentoDAO().getDepartamentoByNombre(null);
-		DAOFactory.getFactory().getEstudianteDAO().getByCedula(null);
-		DAOFactory.getFactory().getDocenteDAO().getByCedula(null);
-		DAOFactory.getFactory().getAdministradorDAO().getByCedula(null);
+		System.out.println( DAOFactory.getFactory().getDepartamentoDAO().getDepartamentoByNombre("Proyecto Inclusión Digital"));
+		System.out.println( DAOFactory.getFactory().getEstudianteDAO().getByCedula("0000000000"));
+		System.out.println( DAOFactory.getFactory().getDocenteDAO().getByCedula("222222222"));
+		System.out.println( DAOFactory.getFactory().getAdministradorDAO().getByCedula("1234567890"));
 		
 		
 	}
