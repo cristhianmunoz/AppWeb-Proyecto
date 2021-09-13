@@ -13,7 +13,10 @@ public class generandoTablas {
 
 	public static void main(String[] args) {
 		
-		DAOFactory.getFactory().getDepartamentoDAO().
+		DAOFactory.getFactory().getDepartamentoDAO().getDepartamentoByNombre(null);
+		DAOFactory.getFactory().getEstudianteDAO().getByCedula(null);
+		DAOFactory.getFactory().getDocenteDAO().getByCedula(null);
+		DAOFactory.getFactory().getAdministradorDAO().getByCedula(null);
 		
 		
 	}
