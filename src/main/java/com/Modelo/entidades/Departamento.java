@@ -23,6 +23,17 @@ public class Departamento implements Serializable {
 	private Integer id;
 	@Column(name = "Departamento")
 	private String nombre;
+	
+	
+	public Departamento() {
+		super();
+	}
+	
+	public Departamento(String nombre) {
+		super();
+		this.nombre = nombre;
+	}
+
 	public Integer getId() {
 		return id;
 	}

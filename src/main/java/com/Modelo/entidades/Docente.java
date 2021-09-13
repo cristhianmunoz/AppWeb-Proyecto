@@ -22,11 +22,16 @@ public class Docente extends Persona implements Serializable {
 	@JoinColumn(name = "departamento")
 	private Departamento departamento;
 	
-	
-	public Docente() {
+		public Docente() {
 		super();
-	}
-	
+		}
+
+		public Docente(String cedula, String clave, String nombre, String apellido,Departamento departamento) {
+			super(cedula, clave, nombre, apellido);
+			this.departamento=departamento;
+		}
+
+		
 
 
 }

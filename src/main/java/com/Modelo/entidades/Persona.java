@@ -32,6 +32,15 @@ public abstract class Persona implements Serializable {
 	public Persona() {
 		super();
 	}   
+	
+	public Persona(String cedula, String clave, String nombre, String apellido) {
+		super();
+		this.cedula = cedula;
+		this.clave = clave;
+		this.nombre = nombre;
+		this.apellido = apellido;
+	}
+
 	public Integer getId() {
 		return this.id;
 	}
