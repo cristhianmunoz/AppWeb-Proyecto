@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.Modelo.jpa.JPADAOFactory;
+
 /**
  * Servlet implementation class MenuOpcionesAdministradorController
  */
@@ -40,13 +42,7 @@ public class MenuOpcionesAdministradorController extends HttpServlet {
 	
 	private void procesar (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
 		
-		/*String opcion = request.getParameter("opciones");
-		if(opcion == "0") {
-			solicitarTutoria(request, response);
-		}if(opcion == "1") {
-			cambiarClave(request, response);
-		}else {*/
-			
+		JPADAOFactory.getFactory().
 			getServletContext().getRequestDispatcher("/jsp/menuOpcionesA.jsp").forward(request, response);
 		
 	}
