@@ -23,10 +23,12 @@ public class DisponibilidadTutoria implements Serializable {
 	@Column(name = "diaSemana")
 	private String diaSemana;
 	
-	@Column(name = "horarioInicio")
+
+	@OneToOne
+	@JoinColumn(name = "horarioInicio")
 	private Horario horarioInicio;
-	
-	@Column(name = "horarioFin")
+	@OneToOne
+	@JoinColumn(name = "horarioFin")
 	private Horario horarioFin;
 
 

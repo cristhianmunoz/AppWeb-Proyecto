@@ -27,12 +27,11 @@ public class Docente_Disponibilidad implements Serializable{
 	
 	@ManyToOne
 	@JoinColumn(name = "idDisponibilidad")
-	private int idDisponibilidad;
+	private  DisponibilidadTutoria disponibilidad;
 	
 	@ManyToOne
 	@JoinColumn(name = "idDocente")
-	private int idDocente;
-
+	private Docente docente;
 	
 	
 	public Docente_Disponibilidad() {
@@ -40,37 +39,37 @@ public class Docente_Disponibilidad implements Serializable{
 	}
 
 
-
-	public Docente_Disponibilidad(int idDisponibilidad, int idDocente) {
+	public Docente_Disponibilidad(DisponibilidadTutoria disponibilidad, Docente docente) {
 		super();
-		this.idDisponibilidad = idDisponibilidad;
-		this.idDocente = idDocente;
+		this.disponibilidad = disponibilidad;
+		this.docente = docente;
+	}
+
+
+	public DisponibilidadTutoria getDisponibilidad() {
+		return disponibilidad;
+	}
+
+
+	public void setDisponibilidad(DisponibilidadTutoria disponibilidad) {
+		this.disponibilidad = disponibilidad;
+	}
+
+
+	public Docente getDocente() {
+		return docente;
+	}
+
+
+	public void setDocente(Docente docente) {
+		this.docente = docente;
 	}
 
 
 
-	public int getIdDisponibilidad() {
-		return idDisponibilidad;
-	}
 
 
 
-	public void setIdDisponibilidad(int idDisponibilidad) {
-		this.idDisponibilidad = idDisponibilidad;
-	}
-
-
-
-	public int getIdDocente() {
-		return idDocente;
-	}
-
-
-
-	public void setIdDocente(int idDocente) {
-		this.idDocente = idDocente;
-	}
-	
 	
 	
 	

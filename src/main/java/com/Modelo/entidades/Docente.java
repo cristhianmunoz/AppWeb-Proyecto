@@ -22,22 +22,11 @@ public class Docente extends Persona implements Serializable {
 	@JoinColumn(name = "departamento")
 	private Departamento departamento;
 	
-	@ManyToMany(targetEntity = DisponibilidadTutoria.class)
-	private Set<DisponibilidadTutoria> disponibilidadTutoriaSet;
 	
 	public Docente() {
 		super();
 	}
 	
-	public Set<DisponibilidadTutoria> getDisponibilidadTutorias() {
-		return disponibilidadTutoriaSet;
-	}
-	public void setDisponibilidadTutorias(Set<DisponibilidadTutoria> disponibilidadTutorias) {
-		this.disponibilidadTutoriaSet = disponibilidadTutorias;
-	}
-	
-	public void addDisponibilidad(DisponibilidadTutoria disponibilidad) {
-		disponibilidadTutoriaSet.add(disponibilidad);
-	}
+
 
 }

@@ -11,6 +11,7 @@ import javax.persistence.*;
  */
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipoUsuario")
 public abstract class Persona implements Serializable {
 
 	private static final long serialVersionUID = 1L;

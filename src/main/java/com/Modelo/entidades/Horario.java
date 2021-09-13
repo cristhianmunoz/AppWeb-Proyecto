@@ -22,10 +22,6 @@ public class Horario implements Serializable {
 	@Column(name = "minuto")
 	private int minuto;
 	
-	@ManyToOne
-	@JoinColumn(name = "disponibilidadTutoria")
-	private DisponibilidadTutoria disponbilidadTutoria;
-
 
 	public Horario() {
 		super();
