@@ -1,6 +1,9 @@
 package com.Modelo.jpa;
 
+import javax.persistence.Query;
+
 import com.Modelo.dao.DepartamentoDAO;
+import com.Modelo.entidades.Administrador;
 import com.Modelo.entidades.Departamento;
 
 public class JPADepartamentoDAO extends JPAGenericDAO<Departamento, Integer> implements DepartamentoDAO {
@@ -9,7 +12,12 @@ public class JPADepartamentoDAO extends JPAGenericDAO<Departamento, Integer> imp
 		super(Departamento.class);
 		// TODO Auto-generated constructor stub
 	}
-
-
+	public Departamento getDepartamentoByNombre(String nombreDepartamento) {
+		String sentenciaJPQL = "SELECT d FROM Departamento d WHERE d.Departamento = :param_nombre";
+		Query query = em.createQuery(sentenciaJPQL);
+		query.setParameter("param_nombre", nombreDepartamento);
+		Departamento depa = (Departamento)query.getSingleResult();
+		return depa;
+	}
 
 }
