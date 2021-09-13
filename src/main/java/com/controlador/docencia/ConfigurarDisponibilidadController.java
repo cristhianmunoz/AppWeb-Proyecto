@@ -69,7 +69,7 @@ public class ConfigurarDisponibilidadController extends HttpServlet {
 	
 	
 	private void procesar (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
-		String url= "/jsp/menuOpcionesE.jsp";
+		
 		getServletContext().getRequestDispatcher("/jsp/menuOpcionesD.jsp").forward(request, response);
 	}
 	

@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.Modelo.dao.DAOFactory;
+import com.Modelo.jpa.JPADAOFactory;
+
 /**
  * Servlet implementation class ListarUsuariosController
  */
@@ -18,24 +21,27 @@ public class ListarUsuariosController extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public ListarUsuariosController() {
-        super();
-        // TODO Auto-generated constructor stub
+        
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		procesar(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
 	}
 
+	private void procesar (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
+		List<Personas> listPersonas= JPADAOFactory.getFactory().getAdministradorDAO().listarUsuarios();
+		
+		request.setAttribute("listPersonas", listPersonas);
+		getServletContext().getRequestDispatcher("/jsp/listarUsuarios.jsp").forward(request, response);
+	}
 }
