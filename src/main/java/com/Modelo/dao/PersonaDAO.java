@@ -1,8 +1,6 @@
 package com.Modelo.dao;
 
-import com.Modelo.entidades.Persona;
+public interface PersonaDAO<T, ID> extends GenericDAO<T, ID> {
 
-public interface PersonaDAO extends GenericDAO<Persona, Integer> {
-
-
+	public T autorizar(String username, String password);
 }

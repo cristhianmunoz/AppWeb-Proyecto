@@ -5,7 +5,7 @@ import javax.persistence.Query;
 import com.Modelo.dao.EstudianteDAO;
 import com.Modelo.entidades.Estudiante;
 
-public class JPAEstudianteDAO extends JPAGenericDAO<Estudiante, Integer> implements EstudianteDAO  {
+public class JPAEstudianteDAO extends JPAPersonaDAO<Estudiante, Integer> implements EstudianteDAO  {
 
 	
 

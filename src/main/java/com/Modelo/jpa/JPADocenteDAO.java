@@ -1,10 +1,12 @@
 package com.Modelo.jpa;
 
+import javax.persistence.Query;
+
 import com.Modelo.dao.DocenteDAO;
 import com.Modelo.entidades.Docente;
-import com.Modelo.entidades.Persona;
+import com.Modelo.entidades.Estudiante;
 
-public class JPADocenteDAO extends JPAGenericDAO<Docente, Integer> implements DocenteDAO {
+public class JPADocenteDAO extends JPAPersonaDAO<Docente, Integer> implements DocenteDAO {
 
 	public JPADocenteDAO() {
 		super(Docente.class);
@@ -13,8 +15,12 @@ public class JPADocenteDAO extends JPAGenericDAO<Docente, Integer> implements Do
 
 	@Override
 	public Docente autorizar(String username, String password) {
-		// TODO Auto-generated method stub
-		return null;
+		String sentenciaJPQL = "SELECT e FROM Persona e WHERE e.usuario = :param_nombre AND e.password = :param_clave";
+		Query query = em.createQuery(sentenciaJPQL);
+		query.setParameter("param_nombre", username);
+		query.setParameter("param_clave", password);
+		Docente resultado = (Docente)query.getSingleResult();
+		return resultado;
 	}
 
 }

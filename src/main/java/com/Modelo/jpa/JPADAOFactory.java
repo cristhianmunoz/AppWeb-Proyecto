@@ -10,13 +10,14 @@ import com.Modelo.dao.FechaDAO;
 import com.Modelo.dao.HorarioDAO;
 import com.Modelo.dao.PersonaDAO;
 import com.Modelo.dao.TutoriaDAO;
+import com.Modelo.entidades.Persona;
 
 public class JPADAOFactory extends DAOFactory{
 
 	@Override
 	public PersonaDAO getPersonaDAO() {
 		// TODO Auto-generated method stub
-		return new JPAPersonaDAO();
+		return new JPAPersonaDAO(Persona.class);
 	}
 
 	@Override
