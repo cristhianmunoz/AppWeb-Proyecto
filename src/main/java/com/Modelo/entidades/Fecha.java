@@ -28,6 +28,14 @@ public class Fecha implements Serializable {
 	public Fecha() {
 		super();
 	}   
+	
+	public Fecha(int dia, int mes, int anio) {
+		super();
+		this.dia = dia;
+		this.mes = mes;
+		this.anio = anio;
+	}
+
 	public Integer getId() {
 		return this.id;
 	}
