@@ -37,11 +37,17 @@ public class DisponibilidadTutoria implements Serializable {
 		super();
 	}
 	
-	public DisponibilidadTutoria(String diaSemana, Horario horarioInicio, Horario horarioFin) {
+	public DisponibilidadTutoria(String diaSemana, Horario horarioInicio) {
 		super();
 		this.diaSemana = diaSemana;
 		this.horarioInicio = horarioInicio;
-		this.horarioFin = horarioFin;
+		int horaInicioMasQuince = horarioInicio.getHora();
+		int minInicioMasQuince = horarioInicio.getMinuto()+15;
+		if(minInicioMasQuince==60) {
+			horaInicioMasQuince+=1;
+			minInicioMasQuince=0;
+		}
+		this.horarioFin = new Horario(horaInicioMasQuince, minInicioMasQuince);
 	}
 
 
