@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.Modelo.dao.DAOFactory;
+import com.Modelo.entidades.Administrador;
+import com.Modelo.entidades.Docente;
+import com.Modelo.entidades.Estudiante;
 import com.Modelo.entidades.Persona;
 
 /**
@@ -41,9 +44,13 @@ public class ListarUsuariosController extends HttpServlet {
 	}
 
 	private void procesar (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
-		List<Persona> listPersonas= DAOFactory.getFactory().getAdministradorDAO().listarUsuarios();
+		List<Administrador> listaAdministradores= DAOFactory.getFactory().getAdministradorDAO().get();
+		List<Docente> listaDocentes= DAOFactory.getFactory().getDocenteDAO().get();
+		List<Estudiante> listaEstudiantes= DAOFactory.getFactory().getEstudianteDAO().get();
 		
-		request.setAttribute("listPersonas", listPersonas);
+		request.setAttribute("listaAdministradores", listaAdministradores);
+		request.setAttribute("listaDocentes", listaDocentes);
+		request.setAttribute("listaEstudiantes", listaEstudiantes);
 		getServletContext().getRequestDispatcher("/jsp/listarUsuarios.jsp").forward(request, response);
 	}
 }

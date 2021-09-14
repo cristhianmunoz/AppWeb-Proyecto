@@ -28,7 +28,7 @@ public class ListarDepartamentosController extends HttpServlet {
 		doGet(request, response);
 	}
 	private void procesar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Departamento> listDepartamento = DAOFactory.getFactory().getDepartamentoDAO().listarDepartamentos();
+		List<Departamento> listDepartamento = DAOFactory.getFactory().getDepartamentoDAO().get();
 		
 		request.setAttribute("listDepartamento", listDepartamento);
 		getServletContext().getRequestDispatcher("/jsp/listarDepartamentos.jsp").forward(request, response);

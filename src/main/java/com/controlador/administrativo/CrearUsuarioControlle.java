@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import com.Modelo.dao.DAOFactory;
 import com.Modelo.entidades.Administrador;
+import com.Modelo.entidades.Departamento;
 import com.Modelo.entidades.Docente;
 import com.Modelo.entidades.Estudiante;
 import com.Modelo.jpa.JPADAOFactory;
@@ -44,7 +45,8 @@ public class CrearUsuarioControlle extends HttpServlet {
 					String clave = request.getParameter("clave");
 					String nombre = request.getParameter("nombre");
 					String apellido = request.getParameter("apellido");
-				int id = Integer.parseInt(request.getParameter("id")) ;
+				//int id = Integer.parseInt(request.getParameter("id"));
+					String departamento = request.getParameter("departamento");
 				
 				//Obtener atorizacion por parte del modelo
 				Administrador administrador =null;
@@ -54,7 +56,7 @@ public class CrearUsuarioControlle extends HttpServlet {
 					String modo = request.getParameter("modo");
 					if (modo=="Administrador") {
 						administrador = new Administrador();
-						administrador.setId(id);
+						//administrador.setId(id);
 						administrador.setCedula(cedula);
 						administrador.setClave(clave);
 						administrador.setNombre(nombre);
@@ -63,7 +65,7 @@ public class CrearUsuarioControlle extends HttpServlet {
 						JPADAOFactory.getFactory().getAdministradorDAO().create(administrador);
 					}if (modo=="Estudiante") {
 						estudiante = new Estudiante();
-						estudiante.setId(id);
+						//estudiante.setId(id);
 						estudiante.setCedula(cedula);
 						estudiante.setClave(clave);
 						estudiante.setNombre(nombre);
@@ -71,11 +73,13 @@ public class CrearUsuarioControlle extends HttpServlet {
 						JPADAOFactory.getFactory().getEstudianteDAO().create(estudiante);
 					}if (modo=="Docente") {
 						docente = new Docente();
-						docente.setId(id);
+						//docente.setId(id);
 						docente.setCedula(cedula);
 						docente.setClave(clave);
 						docente.setNombre(nombre);
 						docente.setApellido(apellido);
+						Departamento departamentoobject= DAOFactory.getFactory().getDepartamentoDAO().getDepartamentoByNombre(departamento);
+						docente.setDepartamento(departamentoobject);
 						JPADAOFactory.getFactory().getDocenteDAO().create(docente);
 					}
 				

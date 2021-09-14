@@ -41,7 +41,7 @@ public class EliminarDepartamentoController extends HttpServlet {
 		String nombreDepa = request.getParameter("nombreDepartamento");
 
 		try {
-			Departamento departamentoBorrar = (Departamento)JPADAOFactory.getFactory().getDepartamentoDAO().getDepartamentoByNombre(nombreDepa);
+			Departamento departamentoBorrar = JPADAOFactory.getFactory().getDepartamentoDAO().getDepartamentoByNombre(nombreDepa);
 			JPADAOFactory.getFactory().getDepartamentoDAO().deleteById(departamentoBorrar.getId());
 		} catch (SQLException e) {
 			e.printStackTrace();

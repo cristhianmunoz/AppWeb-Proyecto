@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.Modelo.dao.DAOFactory;
 import com.Modelo.entidades.Departamento;
-import com.Modelo.jpa.JPADAOFactory;
 
 @WebServlet("/CrearDepartamentoController")
 public class CrearDepartamentoController extends HttpServlet {
@@ -24,13 +24,11 @@ public class CrearDepartamentoController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nombre_departamento = request.getParameter("nombreDepartamento");
-		int id_departamento = Integer.parseInt(request.getParameter("idDepartamento"));
 		
 		Departamento departamentoNuevo = new Departamento();
-		departamentoNuevo.setId(id_departamento);
 		departamentoNuevo.setNombre(nombre_departamento);
 		
-		JPADAOFactory.getFactory().getDepartamentoDAO().create(departamentoNuevo);
+		DAOFactory.getFactory().getDepartamentoDAO().create(departamentoNuevo);
 		
 		request.getRequestDispatcher("/MenuOpcionesAdministradorController").forward(request, response);
 	}

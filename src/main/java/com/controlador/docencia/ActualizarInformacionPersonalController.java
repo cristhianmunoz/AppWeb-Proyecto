@@ -2,13 +2,16 @@ package com.controlador.docencia;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import com.Modelo.dao.DAOFactory;
 import com.Modelo.entidades.Departamento;
 import com.Modelo.entidades.Docente;
 import com.Modelo.jpa.JPADAOFactory;
@@ -33,16 +36,17 @@ public class ActualizarInformacionPersonalController extends HttpServlet {
 		String departamento = request.getParameter("nombreDepartamento");
 		
 		//Obtener autorizaciòn por parte del modelo
-		Docente docente = new Docente();
-		Departamento depa = new Departamento();
+		HttpSession session =  request.getSession();
+		Docente docente =(Docente) session.getAttribute("usuarioLogeado");
+		Departamento depa = DAOFactory.getFactory().getDepartamentoDAO().getDepartamentoByNombre(departamento);
+		
 		
 		docente.setNombre(nombre);
 		docente.setApellido(apellido);
-		depa.setNombre(departamento);
+		docente.setDepartamento(depa);
 		
 		try {
 			JPADAOFactory.getFactory().getDocenteDAO().update(docente);
-			JPADAOFactory.getFactory().getDepartamentoDAO().update(depa);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -51,6 +55,8 @@ public class ActualizarInformacionPersonalController extends HttpServlet {
 	}
 	
 	protected void procesar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		List<Departamento> listaDepartamentos = DAOFactory.getFactory().getDepartamentoDAO().get();
+		request.setAttribute("listaDepartamentos", listaDepartamentos);
 		getServletContext().getRequestDispatcher("/jsp/actualizarInformacionPersonal.jsp").forward(request, response);
 	}
 

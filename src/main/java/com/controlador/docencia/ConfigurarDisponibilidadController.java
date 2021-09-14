@@ -11,8 +11,8 @@ import javax.servlet.http.HttpSession;
 import com.Modelo.dao.DAOFactory;
 import com.Modelo.entidades.DisponibilidadTutoria;
 import com.Modelo.entidades.Docente;
+import com.Modelo.entidades.Docente_Disponibilidad;
 import com.Modelo.entidades.Horario;
-import com.sun.org.apache.xalan.internal.xsltc.compiler.Parser;
 
 /**
  * Servlet implementation class ConfigurarDisponibilidadController
@@ -43,7 +43,7 @@ public class ConfigurarDisponibilidadController extends HttpServlet {
 		//********************Docente*************************************************
 		HttpSession session =  request.getSession();
 		Docente docente = (Docente) session.getAttribute("usuarioLogeado");
-		String cedula = docente.getCedula();
+		//String cedula = docente.getCedula();
 		
 		String diasemana = request.getParameter("diaSemana");
 		int horaInicio = Integer.parseInt(request.getParameter("horaInicio")) ;
@@ -53,16 +53,17 @@ public class ConfigurarDisponibilidadController extends HttpServlet {
 		Horario horario = new Horario();
 				horario.setHora(horaInicio);
 				horario.setMinuto(minutoInicio);
+				
 		DAOFactory.getFactory().getHorarioDAO().create(horario);
 		
 		//******************Disponiiblidad***************************************
-		DisponibilidadTutoria dispo = new DisponibilidadTutoria();
-							  dispo.setDiaSemana(diasemana);
-							  dispo.setHorarioInicio(horario);
+		DisponibilidadTutoria dispo = new DisponibilidadTutoria(diasemana, horario);
+		//pendiente**********************************************************************************************************
+							  
+		Docente_Disponibilidad docente_disponibilidad = new Docente_Disponibilidad(dispo, docente);
+		DAOFactory.getFactory().getDocente_DisponibilidadDAO().create(docente_disponibilidad);
 		
-		docente.addDisponibilidad(dispo);
-		
-		//dispo = DAOFactory.getFactory().getDisponibilidadTutoriaDAO().DisponibilidadDocente(cedula,dispo);
+		request.getRequestDispatcher("/MenuOpcionesAdministradorController").forward(request, response);
 		
 		
 	}
@@ -70,7 +71,7 @@ public class ConfigurarDisponibilidadController extends HttpServlet {
 	
 	private void procesar (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
 		
-		getServletContext().getRequestDispatcher("/jsp/menuOpcionesD.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/jsp/configurarDisponibilidad.jsp").forward(request, response);
 	}
 	
 	

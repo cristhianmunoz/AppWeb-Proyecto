@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.Modelo.dao.DAOFactory;
 import com.Modelo.entidades.Persona;
 import com.Modelo.jpa.JPADAOFactory;
 
@@ -53,7 +54,8 @@ public class EliminarUsuarioController extends HttpServlet {
 		
 		try {
 			Persona persona = (Persona) JPADAOFactory.getFactory().getPersonaDAO().getByCedula(cedula);
-			JPADAOFactory.getFactory().getPersonaDAO().deleteById(persona.getId());
+			DAOFactory.getFactory().getPersonaDAO().deleteById(persona.getId());
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
