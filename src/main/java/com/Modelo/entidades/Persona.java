@@ -19,6 +19,7 @@ public abstract class Persona implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idPersona")
 	private Integer id;
+
 	@Column(name = "cedula")
 	private String cedula;
 	@Column(name = "clave")

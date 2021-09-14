@@ -6,6 +6,7 @@ import javax.persistence.Query;
 
 import com.Modelo.dao.AdministradorDAO;
 import com.Modelo.entidades.Administrador;
+import com.Modelo.entidades.Docente;
 import com.Modelo.entidades.Persona;
 
 public class JPAAdministradorDAO extends JPAPersonaDAO<Administrador, Integer> implements AdministradorDAO {
@@ -24,6 +25,13 @@ public class JPAAdministradorDAO extends JPAPersonaDAO<Administrador, Integer> i
 		List<Persona> personas =query.getResultList();
 		return personas;
 
+	}
+
+	@Override
+	public List<Administrador> get() {
+		@SuppressWarnings("unchecked")
+		List<Administrador> administradores =em.createNativeQuery("select * from persona where tipoUsuario like 'Administrador'",Administrador.class).getResultList();
+		return administradores;
 	}
 
 

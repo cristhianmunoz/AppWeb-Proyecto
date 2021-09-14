@@ -1,5 +1,7 @@
 package com.Modelo.jpa;
 
+import java.util.List;
+
 import javax.persistence.Query;
 
 import com.Modelo.dao.DepartamentoDAO;
@@ -17,6 +19,14 @@ public class JPADepartamentoDAO extends JPAGenericDAO<Departamento, Integer> imp
 		query.setParameter("param_nombre", nombreDepartamento);
 		Departamento depa = (Departamento)query.getSingleResult();
 		return depa;
+	}
+	@Override
+	public List<Departamento> listarDepartamentos() {
+		String sentenciaJPQL = "SELECT d FROM Departamento d ";
+		Query query = em.createQuery(sentenciaJPQL);
+		@SuppressWarnings("unchecked")
+		List<Departamento> depas = query.getResultList();
+		return depas;
 	}
 
 }
