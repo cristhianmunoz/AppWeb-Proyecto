@@ -3,7 +3,6 @@ package com.Modelo.jpa;
 import java.util.List;
 
 import com.Modelo.dao.EstudianteDAO;
-import com.Modelo.entidades.Docente;
 import com.Modelo.entidades.Estudiante;
 
 public class JPAEstudianteDAO extends JPAPersonaDAO<Estudiante, Integer> implements EstudianteDAO  {

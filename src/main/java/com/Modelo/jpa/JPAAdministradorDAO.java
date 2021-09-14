@@ -6,7 +6,6 @@ import javax.persistence.Query;
 
 import com.Modelo.dao.AdministradorDAO;
 import com.Modelo.entidades.Administrador;
-import com.Modelo.entidades.Docente;
 import com.Modelo.entidades.Persona;
 
 public class JPAAdministradorDAO extends JPAPersonaDAO<Administrador, Integer> implements AdministradorDAO {

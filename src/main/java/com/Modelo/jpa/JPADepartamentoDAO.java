@@ -20,13 +20,15 @@ public class JPADepartamentoDAO extends JPAGenericDAO<Departamento, Integer> imp
 		Departamento depa = (Departamento)query.getSingleResult();
 		return depa;
 	}
+	
 	@Override
-	public List<Departamento> listarDepartamentos() {
+	public List<Departamento> get() {
 		String sentenciaJPQL = "SELECT d FROM Departamento d ";
 		Query query = em.createQuery(sentenciaJPQL);
 		@SuppressWarnings("unchecked")
 		List<Departamento> depas = query.getResultList();
 		return depas;
 	}
+
 
 }
