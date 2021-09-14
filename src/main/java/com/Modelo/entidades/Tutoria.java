@@ -38,12 +38,12 @@ public class Tutoria implements Serializable {
 		super();
 	} 
 	
-	public Tutoria(Docente docente, Estudiante estudiante, Horario horario, String estado, Fecha fecha) {
+	public Tutoria(Docente docente, Estudiante estudiante, Horario horario, Fecha fecha) {
 		super();
 		this.docente = docente;
 		this.estudiante = estudiante;
 		this.horario = horario;
-		this.estado = estado;
+		this.estado = "noAsiste";
 		this.fecha = fecha;
 	}
 
