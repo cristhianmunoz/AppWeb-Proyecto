@@ -7,4 +7,6 @@ public interface FechaDAO extends GenericDAO<Fecha, Integer> {
 	public int daysInMonth(int anio, int  month);
 	public int calcularConstSiglo(int siglo);
 	public String determinarDiaDeSemanaDadaUnaFecha(int dia, int mes, int anio);
+	public Fecha getFechaByDia(String diaSemana);
+	public Fecha transformar(String fecha);
 }

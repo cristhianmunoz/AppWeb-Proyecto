@@ -2,6 +2,11 @@ package com.Modelo.entidades;
 
 import java.io.Serializable;
 import java.lang.Integer;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import javax.persistence.*;
 
 /**
@@ -89,8 +94,6 @@ public class Fecha implements Serializable {
 		return true;
 	}
 	
-	public static Fecha getFechaByDia(String diaSemana) {
-		return null;
-	}
+	
    
 }

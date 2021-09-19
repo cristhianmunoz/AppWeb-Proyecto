@@ -20,6 +20,7 @@ import com.Modelo.entidades.Persona;
 import com.Modelo.entidades.Tutoria;
 import com.mysql.cj.Session;
 import com.Modelo.dao.DAOFactory;
+import com.Modelo.dao.FechaDAO;
 
 /**
  * Servlet implementation class SolicitarTutoriaController
@@ -112,9 +113,9 @@ public class SolicitarTutoriaController extends HttpServlet {
 			Docente docente = DAOFactory.getFactory().getDocenteDAO().getByCedula(cedulaDocente);
 			Estudiante estudiante = DAOFactory.getFactory().getEstudianteDAO().getByCedula(cedulaEstudiante);
 			String diaSemana = request.getParameter("diaSemana");
-			Fecha fecha = Fecha.getFechaByDia(diaSemana);
+			//Fecha fecha = DAOFactory.getFactory().getFechaDAO()
 			
-			Tutoria tutoria = new Tutoria(docente, estudiante, inicio, fecha);
+			Tutoria tutoria = new Tutoria(docente, estudiante, inicio, null);
 			
 			DAOFactory.getFactory().getTutoriaDAO().create(tutoria);
 			

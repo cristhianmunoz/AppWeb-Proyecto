@@ -1,5 +1,11 @@
 package com.Modelo.jpa;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+import com.Modelo.dao.DAOFactory;
 import com.Modelo.dao.FechaDAO;
 import com.Modelo.entidades.Fecha;
 
@@ -103,4 +109,57 @@ public class JPAFechaDAO extends JPAGenericDAO<Fecha, Integer> implements FechaD
 		}
 		return diaCadena[numeroDia];
 	}
+	
+	public Fecha getFechaByDia(String diaSemana) {
+		Date date = new Date();
+		SimpleDateFormat dayFormat = new SimpleDateFormat("EE");
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		Calendar c = Calendar.getInstance();
+		
+		c.setTime(date);
+		switch(diaSemana) {
+			case "Lunes":
+				while(dayFormat.format(c.getTime())!="Mon") {
+					c.add(Calendar.DATE, 1);
+				}
+				break;
+			case "Martes":
+				while(dayFormat.format(c.getTime())!="Tue") {
+					c.add(Calendar.DATE, 1);
+				}
+				break;
+			case "Miércoles":
+				while(dayFormat.format(c.getTime())!="Wed") {
+					c.add(Calendar.DATE, 1);
+				}
+				break;
+			case "Jueves":
+				while(dayFormat.format(c.getTime())!="Thu") {
+					c.add(Calendar.DATE, 1);
+				}
+				break;
+			case "Viernes":
+				while(dayFormat.format(c.getTime())!="Fri") {
+					c.add(Calendar.DATE, 1);
+				}
+				break;
+			default:
+				break;
+		}
+		
+		while(DAOFactory.getFactory().getTutoriaDAO().existeTuroria(this.transformar(dateFormat.format(c.getTime())))) {
+			c.add(Calendar.DATE, 7);
+		}
+		//System.out.println(dateFormat.format(c.getTime()));
+		return this.transformar(dateFormat.format(c.getTime()));
+	}
+	
+	public Fecha transformar(String fecha){
+        String parts[] = fecha.split("/");
+        Fecha resultado = new Fecha();
+        resultado.setDia(Integer.parseInt(parts[0]));
+        resultado.setMes(Integer.parseInt(parts[1]));
+        resultado.setAnio(Integer.parseInt(parts[2]));
+        return resultado;
+    }
 }

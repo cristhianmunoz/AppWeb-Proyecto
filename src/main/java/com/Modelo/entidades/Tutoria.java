@@ -43,7 +43,7 @@ public class Tutoria implements Serializable {
 		this.docente = docente;
 		this.estudiante = estudiante;
 		this.horario = horario;
-		this.estado = "noAsiste";
+		this.estado = "Pendiente";
 		this.fecha = fecha;
 	}
 
