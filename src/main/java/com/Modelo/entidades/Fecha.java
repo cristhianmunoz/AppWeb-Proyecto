@@ -88,5 +88,9 @@ public class Fecha implements Serializable {
 		}
 		return true;
 	}
+	
+	public static Fecha getFechaByDia(String diaSemana) {
+		return null;
+	}
    
 }

@@ -13,6 +13,8 @@ import javax.servlet.http.HttpSession;
 import com.Modelo.entidades.Departamento;
 import com.Modelo.entidades.DisponibilidadTutoria;
 import com.Modelo.entidades.Docente;
+import com.Modelo.entidades.Estudiante;
+import com.Modelo.entidades.Fecha;
 import com.Modelo.entidades.Horario;
 import com.Modelo.entidades.Persona;
 import com.Modelo.entidades.Tutoria;
@@ -106,7 +108,13 @@ public class SolicitarTutoriaController extends HttpServlet {
 				fin = new Horario(horaInicio+1,0);
 			}
 			*/
-			Tutoria tutoria = new Tutoria(null, null, inicio, null);
+			
+			Docente docente = DAOFactory.getFactory().getDocenteDAO().getByCedula(cedulaDocente);
+			Estudiante estudiante = DAOFactory.getFactory().getEstudianteDAO().getByCedula(cedulaEstudiante);
+			String diaSemana = request.getParameter("diaSemana");
+			Fecha fecha = Fecha.getFechaByDia(diaSemana);
+			
+			Tutoria tutoria = new Tutoria(docente, estudiante, inicio, fecha);
 			
 			DAOFactory.getFactory().getTutoriaDAO().create(tutoria);
 			
