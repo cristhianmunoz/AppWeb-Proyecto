@@ -11,10 +11,10 @@ import com.Modelo.entidades.Fecha;
 public class Test {
 
 	public static void main(String[] args) {
-		Fecha fecha = DAOFactory.getFactory().getFechaDAO().getFechaByDia("Lunes");
-		System.out.println(fecha.toString());
+		//Fecha fecha = DAOFactory.getFactory().getFechaDAO().getFechaByDia("Lunes");
+		//System.out.println(fecha.toString());
 		
-		/*
+		
 		Date date = new Date();
 		SimpleDateFormat dayFormat = new SimpleDateFormat("EE");
 		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -24,7 +24,7 @@ public class Test {
 			c.add(Calendar.DATE, 1);
 			System.out.println(dateFormat.format(c.getTime()));
 		}
-		*/
+		
 		
 
 	}

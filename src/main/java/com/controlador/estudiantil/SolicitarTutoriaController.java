@@ -46,11 +46,14 @@ public class SolicitarTutoriaController extends HttpServlet {
 		
 		if (request.getParameter("departamentoBuscar")!= null) {
 			listarDocentes(request, response);
-		}if (request.getParameter("cedulaDocentte")!= null){
-			listarHorarioDocente(request, response);
-		}else {
 		}
-		crearTutoria(request,response);
+		if (request.getParameter("cedulaDocente")!= null){
+			listarHorarioDocente(request, response);
+		}
+		if(request.getParameter("diaSemana")!= null){
+			crearTutoria(request,response);
+		}
+		
 	}
 		
 	
@@ -70,7 +73,7 @@ public class SolicitarTutoriaController extends HttpServlet {
 			
 			String nomDepartamento= request.getParameter("departamentoBuscar"); 
 			List<Docente>  listaDocentes = DAOFactory.getFactory().getDocenteDAO().getDocentesByDepartamento(nomDepartamento);
-			request.setAttribute(" listDocentes", listaDocentes);
+			request.setAttribute("listDocentes", listaDocentes);
 			getServletContext().getRequestDispatcher("/jsp/solicitarTutoria.jsp").forward(request, response);
 			
 		}
@@ -113,9 +116,9 @@ public class SolicitarTutoriaController extends HttpServlet {
 			Docente docente = DAOFactory.getFactory().getDocenteDAO().getByCedula(cedulaDocente);
 			Estudiante estudiante = DAOFactory.getFactory().getEstudianteDAO().getByCedula(cedulaEstudiante);
 			String diaSemana = request.getParameter("diaSemana");
-			//Fecha fecha = DAOFactory.getFactory().getFechaDAO()
+			Fecha fecha = DAOFactory.getFactory().getFechaDAO().getFechaByDia(diaSemana);
 			
-			Tutoria tutoria = new Tutoria(docente, estudiante, inicio, null);
+			Tutoria tutoria = new Tutoria(docente, estudiante, inicio, fecha);
 			
 			DAOFactory.getFactory().getTutoriaDAO().create(tutoria);
 			
