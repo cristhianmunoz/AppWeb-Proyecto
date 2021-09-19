@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import com.Modelo.entidades.Departamento;
 import com.Modelo.entidades.DisponibilidadTutoria;
 import com.Modelo.entidades.Docente;
+import com.Modelo.entidades.Horario;
 import com.Modelo.entidades.Persona;
 import com.Modelo.entidades.Tutoria;
 import com.mysql.cj.Session;
@@ -47,9 +48,9 @@ public class SolicitarTutoriaController extends HttpServlet {
 		}else {
 		}
 		crearTutoria(request,response);
-		}
-		
 	}
+		
+	
 	
 	//Procesar
 		private void procesar (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
@@ -74,9 +75,9 @@ public class SolicitarTutoriaController extends HttpServlet {
 		private void listarHorarioDocente (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
 			
 			String nomDepartamento= request.getParameter("departamentoBuscar"); 
-			DAOFactory.getFactory().getDocenteDAO().
+			DAOFactory.getFactory().getDocenteDAO();
 			List<DisponibilidadTutoria>  listaHorarioDocente = DAOFactory.getFactory().getDocenteDAO().getDisponibilidadByDocente(null);
-			request.setAttribute(" listDocentes", listaDocentes);
+			request.setAttribute("listDocentes", listaHorarioDocente);
 			getServletContext().getRequestDispatcher("/jsp/solicitarTutoria.jsp").forward(request, response);
 			
 		}
@@ -87,16 +88,25 @@ public class SolicitarTutoriaController extends HttpServlet {
 			Persona persona = (Persona) session.getAttribute("usuarioLogeado");
 			String cedulaEstudiante = persona.getCedula();
 			
-			String  request.getParameter("cedulaDocente");
-			request.getParameter("cedulaEstudiante");
+			String cedulaDocente =  request.getParameter("cedulaDocente");
+			//String cedulaEstudiante = request.getParameter("cedulaEstudiante");
 			request.getParameter("horario");
 			request.getParameter("fecha"); // dd/mm/yy
 			request.getParameter("hora"); // hh:mm  //hora de comienzo
 			
-			noAsiste
+			int horaInicio = Integer.parseInt(request.getParameter("horaInicio"));
+			int minInicio = Integer.parseInt(request.getParameter("minInicio"));
 			
-			
-			Tutoria tutoria = new Tutoria(null, null, null, cedulaEstudiante, null);
+			Horario inicio = new Horario(horaInicio,minInicio);
+			/*
+			Horario fin = null;
+			if(minInicio!=45) {
+				fin = new Horario(horaInicio,minInicio+15);
+			}else {
+				fin = new Horario(horaInicio+1,0);
+			}
+			*/
+			Tutoria tutoria = new Tutoria(null, null, inicio, null);
 			
 			DAOFactory.getFactory().getTutoriaDAO().create(tutoria);
 			
