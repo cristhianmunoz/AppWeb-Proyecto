@@ -115,31 +115,30 @@ public class JPAFechaDAO extends JPAGenericDAO<Fecha, Integer> implements FechaD
 		SimpleDateFormat dayFormat = new SimpleDateFormat("EE");
 		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		Calendar c = Calendar.getInstance();
-		
 		c.setTime(date);
 		switch(diaSemana) {
 			case "Lunes":
-				while(dayFormat.format(c.getTime())!="Mon") {
+				while(!dayFormat.format(c.getTime()).equals("Mon")) {
 					c.add(Calendar.DATE, 1);
 				}
 				break;
 			case "Martes":
-				while(dayFormat.format(c.getTime())!="Tue") {
+				while(!dayFormat.format(c.getTime()).equals("Tue")) {
 					c.add(Calendar.DATE, 1);
 				}
 				break;
 			case "Miércoles":
-				while(dayFormat.format(c.getTime())!="Wed") {
+				while(!dayFormat.format(c.getTime()).equals("Wed")) {
 					c.add(Calendar.DATE, 1);
 				}
 				break;
 			case "Jueves":
-				while(dayFormat.format(c.getTime())!="Thu") {
+				while(!dayFormat.format(c.getTime()).equals("Thu")) {
 					c.add(Calendar.DATE, 1);
 				}
 				break;
 			case "Viernes":
-				while(dayFormat.format(c.getTime())!="Fri") {
+				while(!dayFormat.format(c.getTime()).equals("Fri")) {
 					c.add(Calendar.DATE, 1);
 				}
 				break;

@@ -23,8 +23,9 @@ public class JPATutoriaDAO extends JPAGenericDAO<Tutoria, Integer> implements Tu
 		query.setParameter(1, fecha.getDia());
 		query.setParameter(2, fecha.getMes());
 		query.setParameter(3, fecha.getAnio());
-		Tutoria resultado = (Tutoria)query.getSingleResult();
-		if(resultado!=null) {
+		@SuppressWarnings("unchecked")
+		List<Tutoria> resultado = (List<Tutoria>) query.getResultList();
+		if(resultado.size()!=0) {
 			existe = true;
 		}
 		return existe;
