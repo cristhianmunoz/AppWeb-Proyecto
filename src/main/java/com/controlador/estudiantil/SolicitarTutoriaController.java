@@ -120,21 +120,15 @@ public class SolicitarTutoriaController extends HttpServlet {
 			
 			Tutoria tutoria = new Tutoria(docente, estudiante, inicio, fecha);
 			
-			DAOFactory.getFactory().getTutoriaDAO().create(tutoria);
-			
-			response.sendError(0);
-			
-			
-			
 			//tutoria.set
-			
 			try {
 				
-				//Tutoria tutoria = DAOFactory.getFactory().getTutoriaDAO().create(null);
-				System.out.println("Exitoso");
+				DAOFactory.getFactory().getTutoriaDAO().create(tutoria);
+				//System.out.println("Exitoso");
+				request.getRequestDispatcher("/MenuOpcionesEstudianteController").forward(request, response);
 				
 			} catch (Exception e) {
-
+				
 				response.sendError(0);
 			}
 			
