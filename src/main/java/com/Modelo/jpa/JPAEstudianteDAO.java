@@ -18,5 +18,7 @@ public class JPAEstudianteDAO extends JPAPersonaDAO<Estudiante, Integer> impleme
 		List<Estudiante> estudiantes =em.createNativeQuery("select * from persona where tipoUsuario like 'Estudiante'",Estudiante.class).getResultList();
 		return estudiantes;
 	}
+	
+	
 
 }

@@ -1,4 +1,4 @@
-package com.controlador.conexion;
+package test;
 
 import java.util.List;
 

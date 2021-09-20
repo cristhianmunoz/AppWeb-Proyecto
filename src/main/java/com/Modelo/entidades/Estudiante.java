@@ -1,6 +1,7 @@
 package com.Modelo.entidades;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
 
 /**
@@ -23,8 +24,5 @@ public class Estudiante extends Persona implements Serializable {
 		super();
 	}
 	
-	public boolean cambiarClave(String claveAnterior, String claveNueva) {
-		return true;
-	}
    
 }
