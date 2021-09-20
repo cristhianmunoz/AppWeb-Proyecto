@@ -15,7 +15,60 @@ public class JPAFechaDAO extends JPAGenericDAO<Fecha, Integer> implements FechaD
 		super(Fecha.class);
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	public Fecha getFechaByDia(String diaSemana) {
+		Date date = new Date();
+		SimpleDateFormat dayFormat = new SimpleDateFormat("EE");
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		Calendar c = Calendar.getInstance();
+		c.setTime(date);
+		switch(diaSemana) {
+			case "Lunes":
+				while(!dayFormat.format(c.getTime()).equals("Mon")) {
+					c.add(Calendar.DATE, 1);
+				}
+				break;
+			case "Martes":
+				while(!dayFormat.format(c.getTime()).equals("Tue")) {
+					c.add(Calendar.DATE, 1);
+				}
+				break;
+			case "Miércoles":
+				while(!dayFormat.format(c.getTime()).equals("Wed")) {
+					c.add(Calendar.DATE, 1);
+				}
+				break;
+			case "Jueves":
+				while(!dayFormat.format(c.getTime()).equals("Thu")) {
+					c.add(Calendar.DATE, 1);
+				}
+				break;
+			case "Viernes":
+				while(!dayFormat.format(c.getTime()).equals("Fri")) {
+					c.add(Calendar.DATE, 1);
+				}
+				break;
+			default:
+				break;
+		}
+		
+		while(DAOFactory.getFactory().getTutoriaDAO().existeTuroria(this.transformar(dateFormat.format(c.getTime())))) {
+			c.add(Calendar.DATE, 7);
+		}
+		//System.out.println(dateFormat.format(c.getTime()));
+		return this.transformar(dateFormat.format(c.getTime()));
+	}
+	
+	public Fecha transformar(String fecha){
+        String parts[] = fecha.split("/");
+        Fecha resultado = new Fecha();
+        resultado.setDia(Integer.parseInt(parts[0]));
+        resultado.setMes(Integer.parseInt(parts[1]));
+        resultado.setAnio(Integer.parseInt(parts[2]));
+        return resultado;
+    }
+	
+	/*
 	public boolean isYearLeap(int year) {
 		if (year % 100 == 0 && year > 1581) {
 			if (year % 400 == 0) {
@@ -109,56 +162,6 @@ public class JPAFechaDAO extends JPAGenericDAO<Fecha, Integer> implements FechaD
 		}
 		return diaCadena[numeroDia];
 	}
+	*/
 	
-	public Fecha getFechaByDia(String diaSemana) {
-		Date date = new Date();
-		SimpleDateFormat dayFormat = new SimpleDateFormat("EE");
-		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		Calendar c = Calendar.getInstance();
-		c.setTime(date);
-		switch(diaSemana) {
-			case "Lunes":
-				while(!dayFormat.format(c.getTime()).equals("Mon")) {
-					c.add(Calendar.DATE, 1);
-				}
-				break;
-			case "Martes":
-				while(!dayFormat.format(c.getTime()).equals("Tue")) {
-					c.add(Calendar.DATE, 1);
-				}
-				break;
-			case "Miércoles":
-				while(!dayFormat.format(c.getTime()).equals("Wed")) {
-					c.add(Calendar.DATE, 1);
-				}
-				break;
-			case "Jueves":
-				while(!dayFormat.format(c.getTime()).equals("Thu")) {
-					c.add(Calendar.DATE, 1);
-				}
-				break;
-			case "Viernes":
-				while(!dayFormat.format(c.getTime()).equals("Fri")) {
-					c.add(Calendar.DATE, 1);
-				}
-				break;
-			default:
-				break;
-		}
-		
-		while(DAOFactory.getFactory().getTutoriaDAO().existeTuroria(this.transformar(dateFormat.format(c.getTime())))) {
-			c.add(Calendar.DATE, 7);
-		}
-		//System.out.println(dateFormat.format(c.getTime()));
-		return this.transformar(dateFormat.format(c.getTime()));
-	}
-	
-	public Fecha transformar(String fecha){
-        String parts[] = fecha.split("/");
-        Fecha resultado = new Fecha();
-        resultado.setDia(Integer.parseInt(parts[0]));
-        resultado.setMes(Integer.parseInt(parts[1]));
-        resultado.setAnio(Integer.parseInt(parts[2]));
-        return resultado;
-    }
 }

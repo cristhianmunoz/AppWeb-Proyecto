@@ -1,6 +1,7 @@
 package com.Modelo.entidades;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -66,6 +67,32 @@ public class Docente_Disponibilidad implements Serializable{
 	}
 
 
+	@Override
+	public String toString() {
+		return "Docente_Disponibilidad [id=" + id + ", disponibilidad=" + disponibilidad + ", docente=" + docente + "]";
+	}
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(disponibilidad, docente, id);
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Docente_Disponibilidad other = (Docente_Disponibilidad) obj;
+		return Objects.equals(disponibilidad, other.disponibilidad) && Objects.equals(docente, other.docente)
+				&& Objects.equals(id, other.id);
+	}
+
+	
 
 
 
