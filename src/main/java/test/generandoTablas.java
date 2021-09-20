@@ -1,4 +1,4 @@
-package com.controlador.conexion;
+package test;
 
 import java.util.List;
 
@@ -23,8 +23,8 @@ public class generandoTablas {
 		for(Administrador est : estudiantes) {
 			System.out.println(est);
 		}
-		String dia = DAOFactory.getFactory().getFechaDAO().determinarDiaDeSemanaDadaUnaFecha(19, 9, 2021);
-		System.out.println("24-12-2021 cae -> " + dia);
+		//String dia = DAOFactory.getFactory().getFechaDAO().determinarDiaDeSemanaDadaUnaFecha(19, 9, 2021);
+		//System.out.println("24-12-2021 cae -> " + dia);
 	}
 
 }

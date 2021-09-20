@@ -29,11 +29,5 @@ public class JPADepartamentoDAO extends JPAGenericDAO<Departamento, Integer> imp
 		List<Departamento> depas = query.getResultList();
 		return depas;
 	}
-	@Override
-	public List<Departamento> listarDepartamentos() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 
 }

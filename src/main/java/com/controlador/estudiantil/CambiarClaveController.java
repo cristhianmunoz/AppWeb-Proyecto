@@ -40,10 +40,11 @@ public class CambiarClaveController extends HttpServlet {
 		HttpSession session =  request.getSession();
 		Estudiante estudiante = (Estudiante) session.getAttribute("usuarioLogeado");
 		
-		String clave = request.getParameter("clave");
-		String claveanterior = estudiante.getClave();
+		String claveAnterior = request.getParameter("claveAnterior");
+		String claveNueva = request.getParameter("claveNueva");
 		
-		if(estudiante.cambiarClave(claveanterior, clave)) {
+		if(estudiante.getClave().equals(claveAnterior)) {
+			estudiante.setClave(claveNueva);
 			try {
 				DAOFactory.getFactory().getEstudianteDAO().update(estudiante);
 				request.getRequestDispatcher("/MenuOpcionesEstudianteController").forward(request, response);

@@ -7,5 +7,4 @@ import com.Modelo.entidades.Persona;
 
 public interface DepartamentoDAO extends GenericDAO<Departamento, Integer> {
 	public Departamento getDepartamentoByNombre(String nombreDepartamento);
-	public List<Departamento> listarDepartamentos();
 }
