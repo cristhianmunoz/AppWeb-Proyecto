@@ -7,6 +7,32 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<form action="../CrearUsuarioControlle" method="POST">
+        <div>
+            <fieldset>
+                <legend>Crear Usuario</legend><br>
+                <div>
+                    <label for="Tipo">Tipo de Usuario</label>
+                    <select name="cargo" id="cargo">
+                        <option value="director">Administrativo</option>
+                        <option value="operador">Docente</option>
+                        <option value="supervisor">Estudiante</option>
+                    </select><br><br>
+                    <label for="cedula">Cédula</label>
+                    <input type="text" name="cedula" title="Ingrese la cédula" required><br><br>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" title="Ingrese su nombre" required><br><br>
+                    <label for="cedula">Apellido</label>
+                    <input type="apellido" name="apellido" title="Ingrese su apellido" required><br><br>
+                    <label for="clave">Clave</label>
+                    <input type="clave" name="clave" /><br><br>
+                    <input type="submit" value="Crear" /><br><br>
+                </div>
+                <div>
+                    <input type="submit" value="Volver a menú" /><br>
+                </div>
+            </fieldset>
+        </div>
+    </form>
 </body>
 </html>
