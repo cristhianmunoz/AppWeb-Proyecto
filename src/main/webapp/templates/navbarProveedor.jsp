@@ -21,7 +21,7 @@
 						class="nav-link dropdown-toggle my-auto me-3 text-center" href="#"
 						id="navbarDropdown" role="button" data-bs-toggle="dropdown"
 						aria-expanded="false"> <i class="bi bi-person-circle color"></i>
-							<span class="text-white" id="Usuario">${sessionScope.usuarioLogeado.getNombreProveedor()}</span>
+							<!--  --><span class="text-white" id="Usuario">${sessionScope.usuarioLogeado.getNombre()}</span>
 					</a>
 						<ul
 							class="dropdown-menu dropdown-menu-end dropdown-menu-dark  bg-success "
