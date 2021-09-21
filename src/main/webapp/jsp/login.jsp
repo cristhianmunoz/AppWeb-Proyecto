@@ -12,8 +12,6 @@
 		<fieldset class="content">
 			<legend>Log in</legend>
 			<div>
-				<a href="otra_pagina.html"> Iniciar Sesion </a><br> 
-				<a href="otra_pagina.html"> Crear Usuario </a><br>
 				<p>Modo</p>
 				<select name="modo" id="modo" >
 					<option value="Administrador" >Administrativo</option>

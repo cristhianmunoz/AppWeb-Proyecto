@@ -27,7 +27,7 @@
 							class="dropdown-menu dropdown-menu-end dropdown-menu-dark  bg-success "
 							aria-labelledby="navbarDropdown">
 							<li><a id="cerrarsesion"
-								class="dropdown-item text-white text-center nav-link" href="LogoutControlador">Cerrar
+								class="dropdown-item text-white text-center nav-link" href="LogoutController">Cerrar
 									sesión</a></li>
 						</ul></li>
 				</ul>
