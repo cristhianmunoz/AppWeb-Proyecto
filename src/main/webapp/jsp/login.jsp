@@ -16,8 +16,8 @@
 			<a href="otra_pagina.html"> Crear Usuario </a><br>
 			<p>Modo</p>
 			<select name="modo" id="modo" >
-				<option value="Administrador">Administrativo</option>
-				<option value="Docente">Docente</option>
+				<option value="Administrador" >Administrativo</option>
+				<option value="Docente" name="">Docente</option>
 				<option value="Estudiante">Estudiante</option>
 			</select><br>
 
