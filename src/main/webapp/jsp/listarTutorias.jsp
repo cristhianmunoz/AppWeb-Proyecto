@@ -22,9 +22,9 @@
 				<table class="table table-success table-striped">
 					<thead>
 						<tr class="align-middle">
-							<th>Cï¿½dula</th>
+							<th>Cédula</th>
 							<th>Nombre</th>
-							<th>Dï¿½a</th>
+							<th>Día</th>
 							<th>Hora</th>
 							<th>Estado</th>
 						</tr>
@@ -44,7 +44,7 @@
 		</div>
 	
 	<button type="button" class="btn btn-danger mx-5"
-	onclick="location.href='MenuOpcionesDocenteController'"> Volver a Menï¿½</button>
+	onclick="location.href='MenuOpcionesDocenteController'"> Volver a Menú</button>
 
 
 
