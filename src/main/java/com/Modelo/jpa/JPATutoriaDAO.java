@@ -40,14 +40,20 @@ public class JPATutoriaDAO extends JPAGenericDAO<Tutoria, Integer> implements Tu
 
 
 	@Override
-	public List<Tutoria> listarTutoriasPendientesPorDocente(int  idDoc) throws ParseException {
+	public List<Tutoria> listarTutoriasPendientesPorDocente(int  idDoc){
 		List<Tutoria> tutorias = this.get();
 		List<Tutoria> tutoriasDoc = new ArrayList<Tutoria>();
 		Date fechaActual = new Date();
 		
 		for(Tutoria tutoria : tutorias) {
 			SimpleDateFormat sf = new SimpleDateFormat("dd-MM-yyyy");
-			Date fechaTutoria = sf.parse(tutoria.getFecha().toString());
+			Date fechaTutoria = null;
+			try {
+				fechaTutoria = sf.parse(tutoria.getFecha().toString());
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			if(tutoria.getDocente().getId()==idDoc && fechaTutoria.after(fechaActual)) {
 				tutoriasDoc.add(tutoria);
 			}
