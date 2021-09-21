@@ -43,7 +43,8 @@ public class LoginController extends HttpServlet {
 		//Obtener parametros 
 		String cedula = request.getParameter("cedula");
 		String clave = request.getParameter("clave");
-		
+		System.out.println("cedula = " + cedula);
+		System.out.println("clave " + clave);
 		//Obtener atorizacion por parte del modelo
 		Administrador administrador =null;
 		Estudiante estudiante = null;
