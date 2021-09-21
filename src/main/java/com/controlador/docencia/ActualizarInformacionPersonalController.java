@@ -59,8 +59,9 @@ public class ActualizarInformacionPersonalController extends HttpServlet {
 			HttpSession session =  request.getSession();	
 			Persona persona = (Persona) session.getAttribute("usuarioLogeado");
 			persona = DAOFactory.getFactory().getDocenteDAO().getByCedula(persona.getCedula());
+			List<Departamento> listaDepartamentos = DAOFactory.getFactory().getDepartamentoDAO().get();
 			session.setAttribute("usuarioLogeado", persona);
-			
+			request.setAttribute("listaDepartamentos", listaDepartamentos);
 		getServletContext().getRequestDispatcher("/jsp/actualizarInformacionPersonal.jsp").forward(request, response);
 	}
 

@@ -27,19 +27,23 @@ public class ActualizarDepartamentoController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//Obtener los paràmetros
-		Departamento departamento = (Departamento) request.getAttribute("departamento");
-
+		String departamentoNuevo = (String) request.getParameter("nombreDepartamento");
+		String departamento = (String) request.getParameter("nombreActual");
+		System.out.println("Depar antes = " + departamento);
+		 Departamento depar = DAOFactory.getFactory().getDepartamentoDAO().getDepartamentoByNombre(departamento);
+		 depar.setNombre(departamentoNuevo);
 		try {
-			JPADAOFactory.getFactory().getDepartamentoDAO().update(departamento);
+			JPADAOFactory.getFactory().getDepartamentoDAO().update(depar);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
-		request.getRequestDispatcher("/MenuOpcionesAdministradorController").forward(request, response);
+		request.getRequestDispatcher("/ListarDepartamentosController").forward(request, response);
 	}
 	
 	private void procesar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nombredepartamento = request.getParameter("nombreDepartamento");
+		System.out.println("Controller"+nombredepartamento);
 		Departamento departamento = DAOFactory.getFactory().getDepartamentoDAO().getDepartamentoByNombre(nombredepartamento);
 		request.setAttribute("departamento", departamento);
 		getServletContext().getRequestDispatcher("/jsp/actualizarDepartamentos.jsp").forward(request, response);

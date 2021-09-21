@@ -22,7 +22,11 @@ public class EliminarDepartamentoController extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+			try {
+				eliminar(request, response);
+			} catch (SQLException e) {
+				response.sendError(0);
+			}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -38,15 +42,15 @@ public class EliminarDepartamentoController extends HttpServlet {
 	
 	private void eliminar(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
 		//int idDepa = Integer.parseInt("idDepartamento");
-		String nombreDepa = request.getParameter("nombreDepartamento");
-
+		
+		int idDepartamento = Integer.parseInt( request.getParameter("idDepartamento"));
+		System.out.println("nomreDepa = " + idDepartamento);
 		try {
-			Departamento departamentoBorrar = JPADAOFactory.getFactory().getDepartamentoDAO().getDepartamentoByNombre(nombreDepa);
-			JPADAOFactory.getFactory().getDepartamentoDAO().deleteById(departamentoBorrar.getId());
+			JPADAOFactory.getFactory().getDepartamentoDAO().deleteById(idDepartamento);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		request.getRequestDispatcher("/MenuOpcionesAdministradorController").forward(request, response);
+		request.getRequestDispatcher("/ListarDepartamentosController").forward(request, response);
 	}
 
 }

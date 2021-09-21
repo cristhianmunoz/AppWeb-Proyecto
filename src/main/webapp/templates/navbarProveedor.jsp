@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-success text-white">
+<nav class="navbar navbar-expand-lg navbar-dark bg-success text-white" >
 	<div class="container-fluid">
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 			data-bs-target="#navbarSupportedContent"

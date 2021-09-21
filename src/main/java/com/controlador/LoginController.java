@@ -52,11 +52,30 @@ public class LoginController extends HttpServlet {
 		
 			String modo = request.getParameter("modo");
 			if (modo.equals("Administrador")) {
-				administrador = DAOFactory.getFactory().getAdministradorDAO().autorizar(cedula,clave);
+				try {
+					administrador = DAOFactory.getFactory().getAdministradorDAO().autorizar(cedula,clave);
+					
+				}catch(Exception e) {
+					request.getRequestDispatcher("/login.jsp").forward(request, response);
+				}
+				
 			}if (modo.equals("Estudiante")) {
-				estudiante = DAOFactory.getFactory().getEstudianteDAO().autorizar(cedula,clave);
+				try {
+					estudiante = DAOFactory.getFactory().getEstudianteDAO().autorizar(cedula,clave);
+					
+				}catch(Exception e) {
+					request.getRequestDispatcher("/login.jsp").forward(request, response);
+				}
+				
 			}if (modo.equals("Docente")) {
-				docente = DAOFactory.getFactory().getDocenteDAO().autorizar(cedula,clave);
+				try {
+					System.out.println("Estoy aquii");
+					docente = DAOFactory.getFactory().getDocenteDAO().autorizar(cedula,clave);
+					
+				}catch(Exception e) {
+					request.getRequestDispatcher("/login.jsp").forward(request, response);
+				}
+				
 			}
 		
 		if(administrador!=null || estudiante!=null || docente!=null ) {

@@ -30,7 +30,7 @@ public class CrearDepartamentoController extends HttpServlet {
 		
 		DAOFactory.getFactory().getDepartamentoDAO().create(departamentoNuevo);
 		
-		request.getRequestDispatcher("/MenuOpcionesAdministradorController").forward(request, response);
+		request.getRequestDispatcher("/ListarDepartamentosController").forward(request, response);
 	}
 	
 	private void procesar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
