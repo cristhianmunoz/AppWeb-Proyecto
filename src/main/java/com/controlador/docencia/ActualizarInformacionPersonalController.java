@@ -32,9 +32,9 @@ public class ActualizarInformacionPersonalController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//Obtener los paràmetros
-		String nombre = request.getParameter("nombre");
-		String apellido = request.getParameter("apellido");
-		String departamento = request.getParameter("nombreDepartamento");
+		String nombre = request.getParameter("nombreDocente");
+		String apellido = request.getParameter("apellidoDocente");
+		String departamento = request.getParameter("departamentoDoc");
 		
 		//Obtener autorizaciòn por parte del modelo
 		HttpSession session =  request.getSession();
@@ -46,9 +46,16 @@ public class ActualizarInformacionPersonalController extends HttpServlet {
 		docente.setApellido(apellido);
 		docente.setDepartamento(depa);
 		
+		List<Departamento> listaDepartamentos = DAOFactory.getFactory().getDepartamentoDAO().get();
+		request.setAttribute("listaDepartamentos", listaDepartamentos);
 		try {
 			JPADAOFactory.getFactory().getDocenteDAO().update(docente);
+			boolean seActualizo = true;
+			request.setAttribute("seActualizo", seActualizo);
+			getServletContext().getRequestDispatcher("/jsp/actualizarInformacionPersonal.jsp").forward(request, response);
 		} catch (SQLException e) {
+			boolean seActualizo = false;
+			request.setAttribute("seActualizo", seActualizo);
 			e.printStackTrace();
 		}
 		
@@ -57,11 +64,14 @@ public class ActualizarInformacionPersonalController extends HttpServlet {
 	
 	protected void procesar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			HttpSession session =  request.getSession();	
-			Persona persona = (Persona) session.getAttribute("usuarioLogeado");
+			Docente persona = (Docente) session.getAttribute("usuarioLogeado");
 			persona = DAOFactory.getFactory().getDocenteDAO().getByCedula(persona.getCedula());
 			List<Departamento> listaDepartamentos = DAOFactory.getFactory().getDepartamentoDAO().get();
+			boolean seActualizo = false;
+			System.out.println("Nombre Usuario = " + persona.getNombre());
 			session.setAttribute("usuarioLogeado", persona);
 			request.setAttribute("listaDepartamentos", listaDepartamentos);
+			request.setAttribute("seActualizo", seActualizo);
 		getServletContext().getRequestDispatcher("/jsp/actualizarInformacionPersonal.jsp").forward(request, response);
 	}
 
