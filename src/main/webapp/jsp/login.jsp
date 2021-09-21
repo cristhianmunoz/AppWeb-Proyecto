@@ -18,7 +18,7 @@
 			<select name="modo" id="modo" >
 				<option value="Administrador">Administrativo</option>
 				<option value="Docente">Docente</option>
-				<option value="Estudiente">Estudiante</option>
+				<option value="Estudiante">Estudiante</option>
 			</select><br>
 
 			<p>Cedula:</p>
