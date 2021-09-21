@@ -11,25 +11,27 @@
 	<form action="../LoginController" method="POST" class="general">
 		<fieldset class="content">
 			<legend>Log in</legend>
-
-			<a href="otra_pagina.html"> Iniciar Sesion </a><br> 
-			<a href="otra_pagina.html"> Crear Usuario </a><br>
-			<p>Modo</p>
-			<select name="modo" id="modo" >
-				<option value="Administrador" >Administrativo</option>
-				<option value="Docente" name="">Docente</option>
-				<option value="Estudiante">Estudiante</option>
-			</select><br>
-
-			<p>Cedula:</p>
-			<input type="text" name="cedula"  id="cedula"/>
-
-			<p>Clave:</p>
-			<input type="password" name="clave" id="clave" /><br>
-			<br> <input type="checkbox" name="datos" value="1"> Recordar mis datos<br>
-			<input type="submit" value="Ingresar" />
-			<input type="submit" value="Salir" />
-
+			<div>
+				<a href="otra_pagina.html"> Iniciar Sesion </a><br> 
+				<a href="otra_pagina.html"> Crear Usuario </a><br>
+				<p>Modo</p>
+				<select name="modo" id="modo" >
+					<option value="Administrador" >Administrativo</option>
+					<option value="Docente" name="">Docente</option>
+					<option value="Estudiante">Estudiante</option>
+				</select><br>
+	
+				<p>Cedula:</p>
+				<input type="text" name="cedula"  id="cedula"/>
+	
+				<p>Clave:</p>
+				<input type="password" name="clave" id="clave" /><br>
+				<br> <input type="checkbox" name="datos" value="1"> Recordar mis datos<br>
+			</div>
+			<div>
+				<input type="submit" value="Ingresar" />
+				<input type="submit" value="Salir" />
+			</div>
 		</fieldset>
 	</form>
 </body>
