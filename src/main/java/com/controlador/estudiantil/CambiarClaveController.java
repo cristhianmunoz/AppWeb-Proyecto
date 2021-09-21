@@ -42,6 +42,8 @@ public class CambiarClaveController extends HttpServlet {
 		
 		String claveNueva = request.getParameter("claveNueva");
 		String claveAnterior = request.getParameter("claveAnterior");
+		System.out.println(claveNueva);
+		System.out.println(claveAnterior);
 		
 		if(estudiante.getClave().equals(claveAnterior)) {
 			estudiante.setClave(claveNueva);
@@ -58,6 +60,7 @@ public class CambiarClaveController extends HttpServlet {
 			response.sendError(0);
 			request.getRequestDispatcher("/CambiarClaveController").forward(request, response);
 		}
+		
 	}
 	
 	private void procesar (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
