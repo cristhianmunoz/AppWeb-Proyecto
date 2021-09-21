@@ -22,7 +22,6 @@ public class DisponibilidadTutoria implements Serializable {
 	private Integer id;
 	@Column(name = "diaSemana")
 	private String diaSemana;
-	
 
 	@OneToOne
 	@JoinColumn(name = "horarioInicio")
@@ -82,7 +81,6 @@ public class DisponibilidadTutoria implements Serializable {
 	public void setHorarioFin(Horario horarioFin) {
 		this.horarioFin = horarioFin;
 	}
-	
 	
 	
 	@Override

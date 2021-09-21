@@ -57,10 +57,32 @@ public class Horario implements Serializable {
 	public void setMinuto(int minuto) {
 		this.minuto = minuto;
 	}
+	
+	public String transformar() {
+		String h = "";
+		String m = "";
+		if(hora<10) {
+			h= "0"+hora;
+		}else {
+			h = String.valueOf(hora);
+		}
+		if(minuto==0) {
+			m = "0" + minuto;
+		}else {
+			m = String.valueOf(minuto);
+		}
+		return h + ":" + m;
+		
+	}
+	
+	
 	@Override
 	public String toString() {
-		return "Horario hora=" + hora + ", minuto=" + minuto ;
+		return "Horario [id=" + id + ", hora=" + hora + ", minuto=" + minuto + "]";
 	}
+
+
+
 	public int hashCode() {
 		int hash = 0;
 		hash += (id != null ? id.hashCode() : 0);
