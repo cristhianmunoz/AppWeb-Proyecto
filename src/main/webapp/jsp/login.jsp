@@ -12,23 +12,23 @@
 		<fieldset class="content">
 			<legend>Log in</legend>
 			<div>
-				<p>Modo</p>
-				<select name="modo" id="modo" >
+				<label>Modo</label>
+				<select name="modo" id="modo" class="float_izq" >
 					<option value="Administrador" >Administrativo</option>
 					<option value="Docente" name="">Docente</option>
 					<option value="Estudiante">Estudiante</option>
 				</select><br>
 	
-				<p>Cedula:</p>
-				<input type="text" name="cedula"  id="cedula"/>
+				<label>Cedula:</label>
+				<input type="text" name="cedula"  id="cedula"class="float_izq"/>
 	
-				<p>Clave:</p>
-				<input type="password" name="clave" id="clave" /><br>
+				<label>Clave:</label>
+				<input type="password" name="clave" id="clave" class="float_izq"/><br>
 				<br> <input type="checkbox" name="datos" value="1"> Recordar mis datos<br>
 			</div>
-			<div>
-				<input type="submit" value="Ingresar" />
-				<input type="submit" value="Salir" />
+			<div class="boton">
+				<input type="submit" value="Ingresar" class="float_der"/>
+				<input type="submit" value="Salir"class="float_izq" />
 			</div>
 		</fieldset>
 	</form>

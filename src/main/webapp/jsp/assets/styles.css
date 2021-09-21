@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Sawarabi+Gothic&display=swap');
 
 body {background-image: url("./img/fondo_color.jpg"); background-size:cover;font-family: Arial, Helvetica, sans-serif;}
+
 .general{
     width: 380px;
     margin: auto;
@@ -22,14 +23,17 @@ body {background-image: url("./img/fondo_color.jpg"); background-size:cover;font
     margin-right: 50px;
     margin-top: 25px;
 }
+#enlaces { font-size: 11px;display:inline-flex; }
+#enlaces a{color:darkblue; text-decoration: none; }
+#modo{width: 173px; height:18px;border-style: none;}
 .float_der{float: left; border-style: none;}
 .float_izq{float:right; border-style: none;}
-#cargo{width: 173px; height:18px;border-style: none;}
+
 .content .boton input{
     border-style: none;
     font-family: 'Sawarabi Gothic', sans-serif;
     font-size: 15px;
-    background-color: whitesmoke;
+    background-color:transparent;
     width: 110px;
 }
 
