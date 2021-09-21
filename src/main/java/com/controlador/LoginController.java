@@ -55,7 +55,7 @@ public class LoginController extends HttpServlet {
 					administrador = DAOFactory.getFactory().getAdministradorDAO().autorizar(cedula,clave);
 					
 				}catch(Exception e) {
-					request.getRequestDispatcher("/login.jsp").forward(request, response);
+					response.sendRedirect("jsp/login.jsp");
 				}
 				
 			}if (modo.equals("Estudiante")) {
@@ -63,14 +63,14 @@ public class LoginController extends HttpServlet {
 					estudiante = DAOFactory.getFactory().getEstudianteDAO().autorizar(cedula,clave);
 					
 				}catch(Exception e) {
-					request.getRequestDispatcher("/login.jsp").forward(request, response);
+					response.sendRedirect("jsp/login.jsp");
 				}
 				
 			}if (modo.equals("Docente")) {
 				try {
 					docente = DAOFactory.getFactory().getDocenteDAO().autorizar(cedula,clave);
 				}catch(Exception e) {
-					request.getRequestDispatcher("/login.jsp").forward(request, response);
+					response.sendRedirect("jsp/login.jsp");
 				}
 				
 			}
