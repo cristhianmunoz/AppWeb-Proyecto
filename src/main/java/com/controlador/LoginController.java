@@ -50,11 +50,11 @@ public class LoginController extends HttpServlet {
 		Docente docente = null;
 		
 			String modo = request.getParameter("modo");
-			if (modo=="Administrador") {
+			if (modo.equals("Administrador")) {
 				administrador = DAOFactory.getFactory().getAdministradorDAO().autorizar(cedula,clave);
-			}if (modo=="Estudiante") {
+			}if (modo.equals("Estudiante")) {
 				estudiante = DAOFactory.getFactory().getEstudianteDAO().autorizar(cedula,clave);
-			}if (modo=="Docente") {
+			}if (modo.equals("Docente")) {
 				docente = DAOFactory.getFactory().getDocenteDAO().autorizar(cedula,clave);
 			}
 		
@@ -62,13 +62,13 @@ public class LoginController extends HttpServlet {
 			//creo la Sesion
 			HttpSession session =  request.getSession();
 			
-			if (modo=="Administrador") {
+			if (modo.equals("Administrador")) {
 				session.setAttribute("usuarioLogeado", administrador);
 				request.getRequestDispatcher("/MenuOpcionesAdministradorController").forward(request, response);
-			}if (modo=="Estudiante") {
+			}if (modo.equals("Estudiante")) {
 				session.setAttribute("usuarioLogeado", estudiante);
 				request.getRequestDispatcher("/MenuOpcionesEstudianteController").forward(request, response);
-			}if (modo=="Docente") {
+			}if (modo.equals("Docente")) {
 				session.setAttribute("usuarioLogeado", docente);
 				request.getRequestDispatcher("/MenuOpcionesDocenteController").forward(request, response);
 			}
