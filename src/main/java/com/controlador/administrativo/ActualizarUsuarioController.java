@@ -109,8 +109,9 @@ public class ActualizarUsuarioController extends HttpServlet {
 
 	private void procesar (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
 		
-	String cedula =request.getParameter("cedula");
-	Persona persona = (Persona) DAOFactory.getFactory().getPersonaDAO().getByCedula(cedula);
+	int id =Integer.parseInt(request.getParameter("id"));
+	@SuppressWarnings("unchecked")
+	Persona persona = (Persona) DAOFactory.getFactory().getPersonaDAO().getById(id);
 	request.setAttribute("persona", persona);
 	getServletContext().getRequestDispatcher("/jsp/actualizarUsuarios.jsp").forward(request, response);
 	
