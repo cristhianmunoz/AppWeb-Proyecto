@@ -45,16 +45,15 @@ public class ListarTutoriasController extends HttpServlet {
 		HttpSession session =  request.getSession();	
 		Docente docente = (Docente) session.getAttribute("usuarioLogeado");
 		
-		List<Tutoria> tutorias = null;
-		try {
-			tutorias = DAOFactory.getFactory().getTutoriaDAO().listarTutoriasPendientesPorDocente(docente.getId());
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		request.setAttribute("tutorias", tutorias);
-		getServletContext().getRequestDispatcher("jsp/listarTutorias.jsp").forward(request, response);
+		//List<Tutoria> tutorias = null;
+		//try {
+			//List<Tutoria> tutorias = DAOFactory.getFactory().getTutoriaDAO().listarTutoriasPendientesPorDocente(docente.getId());
+			//request.setAttribute("tutorias", tutorias);
+		//} catch (ParseException e) {
+			
+		//}
+		 //request.setAttribute("tutorias", tutorias);
+		getServletContext().getRequestDispatcher("/jsp/listarTutorias.jsp").forward(request, response);
 		
 	}
 }
