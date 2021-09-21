@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div><a href="CrearUsuarioController">Nuevo</a></div><br>
+<div><a href="CrearUsuarioControlle">Nuevo</a></div><br>
 <table border="1" class="table">
 	<thead>
 		<tr>
