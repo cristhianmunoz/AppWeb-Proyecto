@@ -22,6 +22,7 @@ public class Estudiante extends Persona implements Serializable {
 
 	public Estudiante() {
 		super();
+		this.setTipoUsuario("Estudiante");
 	}
 	
    

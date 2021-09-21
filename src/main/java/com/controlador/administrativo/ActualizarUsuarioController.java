@@ -2,6 +2,7 @@ package com.controlador.administrativo;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -56,8 +57,8 @@ public class ActualizarUsuarioController extends HttpServlet {
 		Estudiante estudiante = null;
 		Docente docente = null;
 		
-			String modo = request.getParameter("modo");
-			if (modo=="Administrador") {
+			String modo = request.getParameter("cargo");
+			if (modo.equals("Administrador")) {
 				administrador = DAOFactory.getFactory().getAdministradorDAO().getByCedula(cedula);
 				//administrador.setId(id);
 				//administrador.setCedula(cedula);
@@ -71,7 +72,7 @@ public class ActualizarUsuarioController extends HttpServlet {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			}if (modo=="Estudiante") {
+			}if (modo.equals("Estudiante")) {
 				estudiante = DAOFactory.getFactory().getEstudianteDAO().getByCedula(cedula);
 				//estudiante.setId(id);
 				//estudiante.setCedula(cedula);
@@ -84,7 +85,7 @@ public class ActualizarUsuarioController extends HttpServlet {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			}if (modo=="Docente") {
+			}if (modo.equals("Docente")) {
 				docente = DAOFactory.getFactory().getDocenteDAO().getByCedula(cedula);
 				//docente.setId(id);
 				//docente.setCedula(cedula);
@@ -112,7 +113,15 @@ public class ActualizarUsuarioController extends HttpServlet {
 	int id =Integer.parseInt(request.getParameter("id"));
 	@SuppressWarnings("unchecked")
 	Persona persona = (Persona) DAOFactory.getFactory().getPersonaDAO().getById(id);
-	request.setAttribute("persona", persona);
+	if(persona.getTipoUsuario()=="Docente") {
+		Docente docente = (Docente) persona;
+		request.setAttribute("persona", docente);
+	}else {
+		request.setAttribute("persona", persona);
+	}
+	
+	List<Departamento> departamentos = DAOFactory.getFactory().getDepartamentoDAO().get();
+	request.setAttribute("listaDepartamentos", departamentos);
 	getServletContext().getRequestDispatcher("/jsp/actualizarUsuarios.jsp").forward(request, response);
 	
 	}

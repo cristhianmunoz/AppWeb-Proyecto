@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,28 +8,40 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="..//ActualizarUsuarioController" method="POST">
-		<fieldset>
-            <legend>Actualizar Usuario</legend><br>
-            <div>
-                <label for="cedula">Cedula</label>
-                <input type="text" name="cedula" title="Ingrese la cédula" required><br><br>
-                <label for="Tipo">Tipo de Usuario</label>
-                <select name="cargo" id="cargo">
-                    <option value="director">Administrativo</option>
-                    <option value="operador">Docente</option>
-                    <option value="supervisor">Estudiante</option>
-                </select><br><br>
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" title="Ingrese su nombre" required><br><br>
-                <label for="cedula">Apellido</label>
-                <input type="apellido" name="apellido" title="Ingrese su apellido" required><br><br>
-                <label for="clave">Clave</label>
-                <input type="clave" name="clave" /><br><br>
-                <input type="submit" value="Crear" />
-                <input type="submit" value="Actualizar" />
-            </div>
-        </fieldset>
-      </form>
+	<form action="ActualizarUsuarioController" method="POST">
+        <div>
+            <fieldset>
+                <legend>Crear Usuario</legend><br>
+                <div>
+                    <label for="Tipo">Tipo de Usuario: </label>
+                    <input type="text" name="cargo" id="cargo" required readonly value="${persona.tipoUsuario}"><br><br> 
+                 
+                    <label for="cedula">Cédula</label>
+                    <input type="text" name="cedula" id="cedula" title="Ingrese la cédula" required readonly value="${persona.cedula}"><br><br>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" title="Ingrese su nombre" required value="${persona.nombre}"><br><br>
+                    <label for="cedula">Apellido</label>
+                    <input type="text" name="apellido" id="apellido" title="Ingrese su apellido" required value="${persona.apellido}"><br><br>
+                    <label for="clave">Clave</label>
+                    <input type="password" name="clave" id="clave" value="${persona.clave}"/><br><br>
+                    
+                    <c:choose>
+					    <c:when test="${persona.tipoUsuario=='Docente'}">
+					    	<label for="Tipo">Departamento: </label>
+					    	<input type="text" name="departamento" id="departamento" required readonly value="${persona.departamento.nombre}"><br><br>
+					    </c:when>    
+					    <c:otherwise>
+					        
+					    </c:otherwise>
+					</c:choose>
+					 <input type="submit" value="Actualizar"/><br><br>
+                </div>
+                <div>
+                    <input type="submit" value="Volver a menú" /><br>
+                </div>
+            </fieldset>
+        </div>
+    </form>
+   
 </body>
 </html>

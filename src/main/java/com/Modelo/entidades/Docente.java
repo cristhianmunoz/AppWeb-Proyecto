@@ -21,6 +21,7 @@ public class Docente extends Persona implements Serializable {
 	
 		public Docente() {
 		super();
+		this.setTipoUsuario("Docente");
 		}
 
 		public Docente(String cedula, String clave, String nombre, String apellido,Departamento departamento) {
