@@ -43,8 +43,7 @@ public class LoginController extends HttpServlet {
 		//Obtener parametros 
 		String cedula = request.getParameter("cedula");
 		String clave = request.getParameter("clave");
-		System.out.println("cedula = " + cedula);
-		System.out.println("clave " + clave);
+
 		//Obtener atorizacion por parte del modelo
 		Administrador administrador =null;
 		Estudiante estudiante = null;
@@ -69,9 +68,7 @@ public class LoginController extends HttpServlet {
 				
 			}if (modo.equals("Docente")) {
 				try {
-					System.out.println("Estoy aquii");
 					docente = DAOFactory.getFactory().getDocenteDAO().autorizar(cedula,clave);
-					
 				}catch(Exception e) {
 					request.getRequestDispatcher("/login.jsp").forward(request, response);
 				}
@@ -90,6 +87,7 @@ public class LoginController extends HttpServlet {
 				request.getRequestDispatcher("/MenuOpcionesEstudianteController").forward(request, response);
 			}if (modo.equals("Docente")) {
 				session.setAttribute("usuarioLogeado", docente);
+				System.out.println("Mirar estoy aqui");
 				request.getRequestDispatcher("/MenuOpcionesDocenteController").forward(request, response);
 			}
 		

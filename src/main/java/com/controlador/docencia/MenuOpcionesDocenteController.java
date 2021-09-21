@@ -6,7 +6,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class MenuOpcionesDocenteController
@@ -27,20 +26,10 @@ public class MenuOpcionesDocenteController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		//String opcion = request.getParameter("opciones");
-		//if(opcion == null) {
+		System.out.println("Estoy entrando docente");
+
 		procesar(request, response);
-		/*}if(opcion == "1") {
-			listar(request, response);
-		}
-		if(opcion == "2") {
-			configurar(request, response);
-		}
-		if(opcion == "3") {
-			actualizar(request, response);
-		}*/
-		
+
 	}
 
 	/**
@@ -52,7 +41,7 @@ public class MenuOpcionesDocenteController extends HttpServlet {
 	}
 	//--------------------------------------------------------------------------------------------------------------------
 	private void procesar (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
-		
+		System.out.println("Estoy entrando docente para vista");
 		getServletContext().getRequestDispatcher("/jsp/menuOpcionesD.jsp").forward(request, response);
 	}
 	
