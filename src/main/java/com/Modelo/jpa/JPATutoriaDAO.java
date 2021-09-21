@@ -1,5 +1,9 @@
 package com.Modelo.jpa;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Query;
@@ -15,6 +19,8 @@ public class JPATutoriaDAO extends JPAGenericDAO<Tutoria, Integer> implements Tu
 		// TODO Auto-generated constructor stub
 	}
 	
+	
+	
 	@Override
 	public boolean existeTuroria(Fecha fecha) {
 		boolean existe = false;
@@ -29,6 +35,25 @@ public class JPATutoriaDAO extends JPAGenericDAO<Tutoria, Integer> implements Tu
 			existe = true;
 		}
 		return existe;
+	}
+
+
+
+	@Override
+	public List<Tutoria> listarTutoriasPendientesPorDocente(int  idDoc) throws ParseException {
+		List<Tutoria> tutorias = this.get();
+		List<Tutoria> tutoriasDoc = new ArrayList<Tutoria>();
+		Date fechaActual = new Date();
+		
+		for(Tutoria tutoria : tutorias) {
+			SimpleDateFormat sf = new SimpleDateFormat("dd-MM-yyyy");
+			Date fechaTutoria = sf.parse(tutoria.getFecha().toString());
+			if(tutoria.getDocente().getId()==idDoc && fechaTutoria.after(fechaActual)) {
+				tutoriasDoc.add(tutoria);
+			}
+		}
+		
+		return tutoriasDoc;
 	}
 	
 
