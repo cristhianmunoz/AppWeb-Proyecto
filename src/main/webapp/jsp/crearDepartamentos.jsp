@@ -19,7 +19,7 @@
 				placeholder="e.g:Inteligencia Artificial">
 			<div> <a href="MenuOpcionesAdministradorController">Volver a Menú</a> </div>
 			<input type="submit" value="Crear">
-			<div> <a href="CrearMenuController">Crear</a> </div>
+			<div> <a href="CrearDepartamentoController">Crear</a> </div>
 	</fieldset>
 	</form>
 	
