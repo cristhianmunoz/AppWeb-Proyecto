@@ -11,7 +11,8 @@
 <%@ include file="/templates/meta.jsp"%>
 <%@ include file="/templates/navbarProveedor.jsp"%>
 <body>
-	<h1>Actualizar Información</h1>
+
+	<h1>Actualizar Informaciï¿½n</h1>
 	<fieldset class="content">
 		<form action="ActualizarInformacionPersonalController" method="POST">
 			<legend>Docente</legend>
@@ -27,12 +28,30 @@
 				</c:forEach>
 			</select><br> 
 			<div>
-				<a href="ListarDepartamentosController">Volver a Menú</a>
+				<a href="ListarDepartamentosController">Volver a Menï¿½</a>
 			</div>
 			<input type="submit" value="Actualizar">
 	</fieldset>
 	</form>
 	
+
+	<form action="../ActualizarInformacionPersonalController" method="POST">
+        <fieldset>
+            <h2>Actualizar Informacion</h2><br>
+            <legend>Docente</legend>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="txtnombre" title="Ingrese su nombre" required><br><br>
+            <label for="cedula">Apellido</label>
+            <input type="apellido" name="txtapellido" title="Ingrese su apellido" required><br><br>
+            <label for="cargo">Departamento</label><br>
+            <select name="cargo" id="cargo">
+                <option value="director">Director</option>
+                <option value="operador">Operador</option>
+                <option value="supervisor">Supervisor</option>
+            </select><br>
+        </fieldset>
+    </form>
+
 </body>
 <%@ include file="/templates/footer.jsp"%>
 </html>

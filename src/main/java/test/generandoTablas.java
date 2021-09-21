@@ -13,12 +13,17 @@ public class generandoTablas {
 
 	public static void main(String[] args) {
 		
+		
+		Estudiante estudiante = new Estudiante("1727425911", "123", "Cristhian", "Munoz");
+		DAOFactory.getFactory().getEstudianteDAO().create(estudiante);
+		/*
 		Administrador admin = new Administrador();
 		admin.setNombre("Carlos");
 		admin.setApellido("Iniguez");
 		admin.setCedula("1754896985");
 		admin.setClave("carlos123");
 				DAOFactory.getFactory().getAdministradorDAO().create(admin);
+				*/
 //		Docente doc = DAOFactory.getFactory().getDocenteDAO().getByCedula("1111111111");
 //		List<DisponibilidadTutoria> disponibilidad = DAOFactory.getFactory().getDocenteDAO().getDisponibilidadByDocente(doc);
 //		for(DisponibilidadTutoria disp : disponibilidad) {

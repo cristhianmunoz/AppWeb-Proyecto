@@ -1,6 +1,8 @@
 package com.controlador.administrativo;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +20,7 @@ import com.Modelo.jpa.JPADAOFactory;
 /**
  * Servlet implementation class CrearUsuarioControlle
  */
-@WebServlet("/CrearUsuarioControlle")
+@WebServlet("/CrearUsuarioController")
 public class CrearUsuarioController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -53,8 +55,8 @@ public class CrearUsuarioController extends HttpServlet {
 				Estudiante estudiante = null;
 				Docente docente = null;
 				
-					String modo = request.getParameter("modo");
-					if (modo=="Administrador") {
+					int modo = Integer.parseInt(request.getParameter("cargo"));
+					if (modo==1) {
 						administrador = new Administrador();
 						//administrador.setId(id);
 						administrador.setCedula(cedula);
@@ -63,7 +65,7 @@ public class CrearUsuarioController extends HttpServlet {
 						administrador.setApellido(apellido);
 						//***************************************************************************************
 						JPADAOFactory.getFactory().getAdministradorDAO().create(administrador);
-					}if (modo=="Estudiante") {
+					}if (modo==3) {
 						estudiante = new Estudiante();
 						//estudiante.setId(id);
 						estudiante.setCedula(cedula);
@@ -71,7 +73,7 @@ public class CrearUsuarioController extends HttpServlet {
 						estudiante.setNombre(nombre);
 						estudiante.setApellido(apellido);
 						JPADAOFactory.getFactory().getEstudianteDAO().create(estudiante);
-					}if (modo=="Docente") {
+					}if (modo==2) {
 						docente = new Docente();
 						//docente.setId(id);
 						docente.setCedula(cedula);
@@ -89,7 +91,8 @@ public class CrearUsuarioController extends HttpServlet {
 	
 	
 	private void procesar (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
-		
+		List<Departamento> departamentos = DAOFactory.getFactory().getDepartamentoDAO().get();
+		request.setAttribute("listaDepartamentos", departamentos);
 		getServletContext().getRequestDispatcher("/jsp/crearUsuario.jsp").forward(request, response);
 	
 	}

@@ -28,6 +28,8 @@ public abstract class Persona implements Serializable {
 	private String nombre;
 	@Column(name = "apellido")
 	private String apellido;
+	@Column(name="tipoUsuario")
+	private String tipoUsuario;
 
 
 	public Persona() {
@@ -77,6 +79,17 @@ public abstract class Persona implements Serializable {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
+	
+	
+	
+	public String getTipoUsuario() {
+		return tipoUsuario;
+	}
+
+	public void setTipoUsuario(String tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
+
 	@Override
 	public String toString() {
 		return "Persona cedula=" + cedula + ", clave=" + clave + ", nombre=" + nombre + ", apellido=" + apellido ;
