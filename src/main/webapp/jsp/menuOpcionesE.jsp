@@ -14,8 +14,8 @@
         <fieldset>
             <legend>Modulos</legend>
             <div>
-                <div><A HREF="/SolicitarTutoriaController"> Solicitar Tutoria  </A></div><br>
-                <div><A HREF="/CambiarClaveController"> Cambiar Clave </A></div><br>
+                <div><A href="SolicitarTutoriaController"> Solicitar Tutoria  </A></div><br>
+                <div><A href="CambiarClaveController"> Cambiar Clave </A></div><br>
             </div>
         </fieldset>
     </div>
