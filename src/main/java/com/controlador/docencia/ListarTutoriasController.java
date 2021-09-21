@@ -38,7 +38,7 @@ public class ListarTutoriasController extends HttpServlet {
 	protected void procesar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
-		List<Tutoria> tutorias = DAOFactory.getFactory().getTutoriaDAO().get();
+		
 		
 
 		HttpSession session =  request.getSession();	
