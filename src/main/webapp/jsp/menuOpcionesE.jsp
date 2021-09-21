@@ -10,13 +10,15 @@
 <%@ include file="/templates/navbarProveedor.jsp"%>
 <body>
 
-<h1>Estas aqui juppi</h1>
-<div class= "container"> 
-	<legend>Módulos</legend>
-	<button onclick="location.href='SolicitarTutoriaController'">Solicitar Tutoria </button>
-	<br>
-	<button onclick="location.href='CambiarClaveController'">Cambiar Clave</button>
-</div>
+	<div>
+        <fieldset>
+            <legend>Modulos</legend>
+            <div>
+                <div><A HREF="/SolicitarTutoriaController"> Solicitar Tutoria  </A></div><br>
+                <div><A HREF="/CambiarClaveController"> Cambiar Clave </A></div><br>
+            </div>
+        </fieldset>
+    </div>
 
 </body>
 <%@ include file="/templates/footer.jsp"%>
