@@ -14,7 +14,7 @@ public class JPADocenteDAO extends JPAPersonaDAO<Docente, Integer> implements Do
 
 	public JPADocenteDAO() {
 		super(Docente.class);
-		// TODO Auto-generated constructor stub
+	
 	}
 	
 	@Override

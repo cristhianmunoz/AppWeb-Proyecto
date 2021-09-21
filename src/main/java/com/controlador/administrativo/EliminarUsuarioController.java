@@ -32,7 +32,7 @@ public class EliminarUsuarioController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		eliminar(request, response);
 	}
 
 	/**
@@ -50,12 +50,11 @@ public class EliminarUsuarioController extends HttpServlet {
 
 	@SuppressWarnings("unchecked")
 	private void eliminar (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
-		String cedula = request.getParameter("cedula") ;
+		String id = request.getParameter("id") ;
 		
 		try {
-			Persona persona = (Persona) JPADAOFactory.getFactory().getPersonaDAO().getByCedula(cedula);
+			Persona persona = (Persona) JPADAOFactory.getFactory().getPersonaDAO().getById(id);
 			DAOFactory.getFactory().getPersonaDAO().deleteById(persona.getId());
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

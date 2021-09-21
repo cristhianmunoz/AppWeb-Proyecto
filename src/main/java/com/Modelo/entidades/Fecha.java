@@ -71,7 +71,7 @@ public class Fecha implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Fecha dia=" + dia + ", mes=" + mes + ", anio=" + anio ;
+		return  dia + "-" + mes + "-" + anio ;
 	}
 	public int hashCode() {
 		int hash = 0;

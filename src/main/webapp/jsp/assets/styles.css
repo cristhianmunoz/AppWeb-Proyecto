@@ -1,0 +1,10 @@
+@charset "ISO-8859-1";
+.content{
+    text-align:justify;
+}
+.general{
+    height: auto;
+    width: 450px;
+    margin: auto;
+    padding: auto;
+}

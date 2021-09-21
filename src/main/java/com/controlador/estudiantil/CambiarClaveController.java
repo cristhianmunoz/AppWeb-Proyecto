@@ -40,8 +40,8 @@ public class CambiarClaveController extends HttpServlet {
 		HttpSession session =  request.getSession();
 		Estudiante estudiante = (Estudiante) session.getAttribute("usuarioLogeado");
 		
-		String claveAnterior = request.getParameter("claveAnterior");
 		String claveNueva = request.getParameter("claveNueva");
+		String claveAnterior = request.getParameter("claveAnterior");
 		
 		if(estudiante.getClave().equals(claveAnterior)) {
 			estudiante.setClave(claveNueva);
@@ -61,7 +61,7 @@ public class CambiarClaveController extends HttpServlet {
 	}
 	
 	private void procesar (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
-		
+
 			getServletContext().getRequestDispatcher("/jsp/cambiarClave.jsp").forward(request, response);
 		
 	}
