@@ -42,7 +42,7 @@
                     <option value="30">30</option>
                     <option value="45">45</option>
                 </select><br><br>
-                <input type="submit" value="Regresar al menu" />
+                
                 <input type="submit" value="Guardar" />
             </div>
         </fieldset>
