@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +12,7 @@
 <%@ include file="/templates/meta.jsp"%>
 <%@ include file="/templates/navbarProveedor.jsp"%>
 <body>
+
 <h1>Lista Tutorias</h1>
 	<h3>Docente</h3>
 		
@@ -20,9 +22,9 @@
 				<table class="table table-success table-striped">
 					<thead>
 						<tr class="align-middle">
-							<th>Cédula</th>
+							<th>Cï¿½dula</th>
 							<th>Nombre</th>
-							<th>Día</th>
+							<th>Dï¿½a</th>
 							<th>Hora</th>
 							<th>Estado</th>
 						</tr>
@@ -42,7 +44,8 @@
 		</div>
 	
 	<button type="button" class="btn btn-danger mx-5"
-	onclick="location.href='MenuOpcionesDocenteController'"> Volver a Menú</button>
+	onclick="location.href='MenuOpcionesDocenteController'"> Volver a Menï¿½</button>
+
 
 
 </body>
