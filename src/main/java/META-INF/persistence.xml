@@ -13,7 +13,7 @@
 		<class>com.Modelo.entidades.Docente_Disponibilidad</class>
 		<properties>
 			<property name="javax.persistence.schema-generation.database.action" value="none"/>
-			<property name="eclipselink.ddl-generation" value="create-tables"/>
+			<property name="eclipselink.ddl-generation" value="none"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://tutoriasproyecto.mysql.database.azure.com:3306/dbtutoriasproyecto?serverTimezone=UTC"/>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 			<property name="javax.persistence.jdbc.user" value="appswebproy@tutoriasproyecto"/>
