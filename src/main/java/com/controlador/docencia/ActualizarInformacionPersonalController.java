@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import com.Modelo.dao.DAOFactory;
 import com.Modelo.entidades.Departamento;
 import com.Modelo.entidades.Docente;
+import com.Modelo.entidades.Persona;
 import com.Modelo.jpa.JPADAOFactory;
 
 
@@ -55,8 +56,11 @@ public class ActualizarInformacionPersonalController extends HttpServlet {
 	}
 	
 	protected void procesar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Departamento> listaDepartamentos = DAOFactory.getFactory().getDepartamentoDAO().get();
-		request.setAttribute("listaDepartamentos", listaDepartamentos);
+			HttpSession session =  request.getSession();	
+			Persona persona = (Persona) session.getAttribute("usuarioLogeado");
+			persona = DAOFactory.getFactory().getDocenteDAO().getByCedula(persona.getCedula());
+			session.setAttribute("usuarioLogeado", persona);
+			
 		getServletContext().getRequestDispatcher("/jsp/actualizarInformacionPersonal.jsp").forward(request, response);
 	}
 
