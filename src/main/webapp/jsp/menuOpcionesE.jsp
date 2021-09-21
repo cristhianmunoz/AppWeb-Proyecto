@@ -7,6 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<div>
+        <fieldset>
+            <legend>Modulos</legend>
+            <div>
+                <div><A HREF="/SolicitarTutoriaController"> Solicitar Tutoria  </A></div><br>
+                <div><A HREF="/CambiarClaveController"> Cambiar Clave </A></div><br>
+            </div>
+        </fieldset>
+    </div>
 </body>
 </html>
