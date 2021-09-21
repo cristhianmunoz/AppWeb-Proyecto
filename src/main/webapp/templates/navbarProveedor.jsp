@@ -12,7 +12,7 @@
 		</button>
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<a class="navbar-brand">Sistema de subastas</a>
+			<a class="navbar-brand">Sistema de Tutorias EPN</a>
 		</div>
 		<div class="d-flex flex-row-reverse  bd-highlight">
 				
