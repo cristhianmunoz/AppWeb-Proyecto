@@ -13,11 +13,11 @@
 		<class>com.Modelo.entidades.Docente_Disponibilidad</class>
 		<properties>
 			<property name="javax.persistence.schema-generation.database.action" value="none"/>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dbTutoriasProyecto"/>
-			<property name="javax.persistence.jdbc.user" value="root"/>
-			<property name="javax.persistence.jdbc.password" value=""/>
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-			<property name="eclipselink.ddl-generation" value="none"/>
+			<property name="eclipselink.ddl-generation" value="create-tables"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://tutoriasproyecto.mysql.database.azure.com:3306/dbtutoriasproyecto?serverTimezone=UTC"/>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.user" value="appswebproy@tutoriasproyecto"/>
+			<property name="javax.persistence.jdbc.password" value="epnapiweb99#"/>
 		</properties>
 	</persistence-unit>
 </persistence>

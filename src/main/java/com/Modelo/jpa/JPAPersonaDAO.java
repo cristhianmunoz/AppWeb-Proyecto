@@ -3,7 +3,6 @@ package com.Modelo.jpa;
 import javax.persistence.Query;
 
 import com.Modelo.dao.PersonaDAO;
-import com.Modelo.entidades.Estudiante;
 
 public class JPAPersonaDAO<T,ID> extends JPAGenericDAO<T, ID> implements PersonaDAO<T, ID> {
 

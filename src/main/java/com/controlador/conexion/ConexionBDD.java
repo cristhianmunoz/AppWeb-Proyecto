@@ -9,11 +9,11 @@ import java.sql.SQLException;
 public class ConexionBDD {
 	
 	public static Connection getConexion() throws SQLException{
-		String servidor = "localhost";
-		String database = "personas_test";
+		String servidor = "tutoriasproyecto.mysql.database.azure.com";
+		String database = "dbtutoriasproyecto";
 		String url ="jdbc:mysql://"+servidor+"/"+database;
-		String usuario = "root";
-		String password = "";
+		String usuario = "appswebproy@tutoriasproyecto";
+		String password = "epnapiweb99#";
 		
 		//DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
 		return DriverManager.getConnection(url,usuario,password);
