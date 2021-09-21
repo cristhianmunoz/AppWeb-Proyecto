@@ -36,6 +36,17 @@ body {background-image: url("./img/fondo_color.jpg"); background-size:cover;font
     background-color:transparent;
     width: 110px;
 }
+.boton{
+    text-align: center;
+}
+.content .boton input{
+    font-family: 'Sawarabi Gothic', sans-serif;
+    font-size: 15px;
+    background-color: lightcyan;
+    border:none;
+    width: 110px;
+}
+
 
 
 
