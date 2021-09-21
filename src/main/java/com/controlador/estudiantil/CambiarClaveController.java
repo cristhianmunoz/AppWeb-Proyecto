@@ -40,11 +40,10 @@ public class CambiarClaveController extends HttpServlet {
 		HttpSession session =  request.getSession();
 		Estudiante estudiante = (Estudiante) session.getAttribute("usuarioLogeado");
 		
-		String claveAnterior = request.getParameter("claveAnterior");
-		String claveNueva = request.getParameter("claveNueva");
+		String clave = request.getParameter("clave");
+		String claveanterior = estudiante.getClave();
 		
-		if(estudiante.getClave().equals(claveAnterior)) {
-			estudiante.setClave(claveNueva);
+		if(estudiante.cambiarClave(claveanterior, clave)) {
 			try {
 				DAOFactory.getFactory().getEstudianteDAO().update(estudiante);
 				request.getRequestDispatcher("/MenuOpcionesEstudianteController").forward(request, response);
@@ -61,7 +60,7 @@ public class CambiarClaveController extends HttpServlet {
 	}
 	
 	private void procesar (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
-		
+
 			getServletContext().getRequestDispatcher("/jsp/cambiarClave.jsp").forward(request, response);
 		
 	}
