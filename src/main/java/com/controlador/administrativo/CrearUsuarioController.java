@@ -19,13 +19,13 @@ import com.Modelo.jpa.JPADAOFactory;
  * Servlet implementation class CrearUsuarioControlle
  */
 @WebServlet("/CrearUsuarioControlle")
-public class CrearUsuarioControlle extends HttpServlet {
+public class CrearUsuarioController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CrearUsuarioControlle() {
+    public CrearUsuarioController() {
         
     }
 
