@@ -25,7 +25,7 @@ public class ListarDepartamentosController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		procesar(request, response);
 	}
 	private void procesar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Departamento> listDepartamento = DAOFactory.getFactory().getDepartamentoDAO().get();
