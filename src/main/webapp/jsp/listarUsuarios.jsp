@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Lista de Usuarios</title>
 </head>
 <%@ include file="/templates/meta.jsp"%>
 <%@ include file="/templates/navbarProveedor.jsp"%>
@@ -17,6 +17,7 @@
 			<thead>
 				<tr class="align-middle">
 					<th>Id</th>
+					<th>Tipo de Usuario</th>
 					<th>Nombre</th>
 					<th>Apellido</th>
 					<th>Cédula</th>
@@ -27,6 +28,7 @@
 			<c:forEach var="administrador" items="${listaAdministradores}">
 			<tr class="align-middle">
 				<td>${administrador.id}</td>
+				<td>${administrador.tipoUsuario}</td>
 				<td>${administrador.nombre}</td>
 				<td>${administrador.apellido}</td>
 				<td>${administrador.cedula}</td>
@@ -38,6 +40,7 @@
 			<c:forEach var="docente" items="${listaDocentes}">
 			<tr class="align-middle">
 				<td>${docente.id}</td>
+				<td>${docente.tipoUsuario}</td>
 				<td>${docente.nombre}</td>
 				<td>${docente.apellido}</td>
 				<td>${docente.cedula}</td>
@@ -49,6 +52,7 @@
 			<c:forEach var="estudiante" items="${listaEstudiantes}">
 			<tr class="align-middle">
 				<td>${estudiante.id}</td>
+				<td>${estudiante.tipoUsuario}</td>
 				<td>${estudiante.nombre}</td>
 				<td>${estudiante.apellido}</td>
 				<td>${estudiante.cedula}</td>
@@ -57,7 +61,7 @@
 					<a href="EliminarUsuarioController?id=${estudiante.id}"><box-icon name='trash' ></box-icon>Eliminar</a></td>
 			</tr>
 			</c:forEach>
-		</table>
+		</table><br><br>
 	</div>
 </div>
 

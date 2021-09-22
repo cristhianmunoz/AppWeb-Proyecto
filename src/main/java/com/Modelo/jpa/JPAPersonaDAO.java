@@ -1,15 +1,21 @@
 package com.Modelo.jpa;
 
+import java.util.List;
+
 import javax.persistence.Query;
 
 import com.Modelo.dao.PersonaDAO;
+import com.Modelo.entidades.Docente;
+import com.Modelo.entidades.Persona;
 
 public class JPAPersonaDAO<T,ID> extends JPAGenericDAO<T, ID> implements PersonaDAO<T, ID> {
 
-	public JPAPersonaDAO(Class<T> persistentClass) {
-		super(persistentClass);
+	@SuppressWarnings("unchecked")
+	public JPAPersonaDAO() {
+		super((Class<T>) Persona.class);
 		// TODO Auto-generated constructor stub
 	}
+
 
 	@Override
 	public T autorizar(String username, String password) {

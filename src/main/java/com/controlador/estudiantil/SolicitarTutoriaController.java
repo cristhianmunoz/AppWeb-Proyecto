@@ -39,18 +39,23 @@ public class SolicitarTutoriaController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		procesar(request, response);
+		
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		if (request.getParameter("departamentoBuscar")!= null) {
+		/*
+		if (request.getParameter("dep") != "0") {
+			request.setAttribute("mostrarDocentes", '1');
 			listarDocentes(request, response);
 		}
-		if (request.getParameter("cedulaDocente")!= null){
+		if (request.getParameter("doc")!= "0"){
+			request.setAttribute("mostrarDisponibilidad", '1');
 			listarHorarioDocente(request, response);
 		}
-		if(request.getParameter("diaSemana")!= null){
+		*/
+		if(request.getParameter("idDisponibilidad")!= "null"){
 			crearTutoria(request,response);
 		}
 		
@@ -62,15 +67,25 @@ public class SolicitarTutoriaController extends HttpServlet {
 		private void procesar (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
 			
 			List<Departamento> listaDepartamentos = DAOFactory.getFactory().getDepartamentoDAO().get();
-			List<Docente> listaDocentes = DAOFactory.getFactory().getDocenteDAO().get();
-			
-			for(Departamento d : listaDepartamentos) {
-				System.out.println(d.toString());
-			}
 			request.setAttribute("listaDepartamentos", listaDepartamentos);
-			request.setAttribute("listaDocentes", listaDocentes);
-			getServletContext().getRequestDispatcher("/jsp/solicitarTutoria.jsp").forward(request, response);
 			
+			
+			HttpSession session =  request.getSession();
+			
+			
+			if (request.getParameter("dep") != null) {
+				System.out.println("Entre a mostrar docentes");
+				System.out.println(request.getAttribute("departamentoBuscar"));
+				request.setAttribute("mostrarDocentes", "1");
+				listarDocentes(request, response);
+			}
+			if (request.getParameter("doc")!= null){
+				System.out.println("Entre a mostrar disponibilidad");
+				request.setAttribute("mostrarDisponibilidad", "1");
+				listarHorarioDocente(request, response);
+			}
+			
+			getServletContext().getRequestDispatcher("/jsp/solicitarTutoria.jsp").include(request, response);
 		}
 		
 		
@@ -78,19 +93,20 @@ public class SolicitarTutoriaController extends HttpServlet {
 		private void listarDocentes (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
 			
 			String nomDepartamento= request.getParameter("departamentoBuscar"); 
+			System.out.println("Busqueda docente: " + nomDepartamento);
 			List<Docente>  listaDocentes = DAOFactory.getFactory().getDocenteDAO().getDocentesByDepartamento(nomDepartamento);
 			request.setAttribute("listDocentes", listaDocentes);
-			getServletContext().getRequestDispatcher("/jsp/solicitarTutoria.jsp").forward(request, response);
+			//getServletContext().getRequestDispatcher("/jsp/solicitarTutoria.jsp").forward(request, response);
 			
 		}
 		
 		private void listarHorarioDocente (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
 			
-			String nomDepartamento= request.getParameter("departamentoBuscar"); 
-			DAOFactory.getFactory().getDocenteDAO();
-			List<DisponibilidadTutoria>  listaHorarioDocente = DAOFactory.getFactory().getDocenteDAO().getDisponibilidadByDocente(null);
-			request.setAttribute("listDocentes", listaHorarioDocente);
-			getServletContext().getRequestDispatcher("/jsp/solicitarTutoria.jsp").forward(request, response);
+			int id= Integer.parseInt(request.getParameter("idDocente")); 
+			Docente docente = DAOFactory.getFactory().getDocenteDAO().getById(id);
+			List<DisponibilidadTutoria>  listaHorarioDocente = DAOFactory.getFactory().getDocenteDAO().getDisponibilidadByDocente(docente);
+			request.setAttribute("listaDisponibilidad", listaHorarioDocente);
+			//getServletContext().getRequestDispatcher("/jsp/solicitarTutoria.jsp").forward(request, response);
 			
 		}
 		private void crearTutoria (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
@@ -102,6 +118,11 @@ public class SolicitarTutoriaController extends HttpServlet {
 			
 			String cedulaDocente =  request.getParameter("cedulaDocente");
 			//String cedulaEstudiante = request.getParameter("cedulaEstudiante");
+			
+			int idDis = Integer.parseInt(request.getParameter("idDisponibilidad"));
+			DisponibilidadTutoria dis = DAOFactory.getFactory().getDisponibilidadTutoriaDAO().getById(idDis);
+			
+			/*
 			request.getParameter("horario");
 			request.getParameter("fecha"); // dd/mm/yy
 			request.getParameter("hora"); // hh:mm  //hora de comienzo
@@ -110,7 +131,7 @@ public class SolicitarTutoriaController extends HttpServlet {
 			int minInicio = Integer.parseInt(request.getParameter("minInicio"));
 			
 			Horario inicio = new Horario(horaInicio,minInicio);
-			/*
+			
 			Horario fin = null;
 			if(minInicio!=45) {
 				fin = new Horario(horaInicio,minInicio+15);
@@ -118,6 +139,8 @@ public class SolicitarTutoriaController extends HttpServlet {
 				fin = new Horario(horaInicio+1,0);
 			}
 			*/
+			
+			Horario inicio = dis.getHorarioInicio();
 			
 			Docente docente = DAOFactory.getFactory().getDocenteDAO().getByCedula(cedulaDocente);
 			Estudiante estudiante = DAOFactory.getFactory().getEstudianteDAO().getByCedula(cedulaEstudiante);

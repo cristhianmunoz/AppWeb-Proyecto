@@ -8,7 +8,7 @@ import com.Modelo.entidades.Estudiante;
 public class JPAEstudianteDAO extends JPAPersonaDAO<Estudiante, Integer> implements EstudianteDAO  {
 
 	public JPAEstudianteDAO() {
-		super(Estudiante.class);
+		super();
 		// TODO Auto-generated constructor stub
 	}
 

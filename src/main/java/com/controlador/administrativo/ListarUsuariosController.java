@@ -51,6 +51,7 @@ public class ListarUsuariosController extends HttpServlet {
 		request.setAttribute("listaAdministradores", listaAdministradores);
 		request.setAttribute("listaDocentes", listaDocentes);
 		request.setAttribute("listaEstudiantes", listaEstudiantes);
+
 		getServletContext().getRequestDispatcher("/jsp/listarUsuarios.jsp").forward(request, response);
 	}
 }

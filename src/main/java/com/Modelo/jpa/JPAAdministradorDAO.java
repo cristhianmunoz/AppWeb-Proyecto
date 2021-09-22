@@ -11,7 +11,7 @@ import com.Modelo.entidades.Persona;
 public class JPAAdministradorDAO extends JPAPersonaDAO<Administrador, Integer> implements AdministradorDAO {
 
 	public JPAAdministradorDAO() {
-		super(Administrador.class);
+		super();
 		
 	}
 

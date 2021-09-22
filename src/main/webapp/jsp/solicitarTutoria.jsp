@@ -6,53 +6,66 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>STE</title>
+<title>Solicitar Tutoría</title>
 </head>
 <%@ include file="/templates/meta.jsp"%>
 <%@ include file="/templates/navbarProveedor.jsp"%>
 <body>
-<h1>Solicitud de Tutorias</h1>
-<form action="ActualizarInformacionPersonalController" method="POST">
-			<legend>Estudiante</legend>
+<form action="SolicitarTutoriaController" method="POST">
+	<fieldset class="content">
+			<legend>Solicitud de Tutorias</legend>
 			
-			<label for="departamentoDoc">Departamento:</label>
-			 <select	name="departamentoBuscar" id="departamentoDoc">
+			<label for="departamentoDoc">Departamento: </label>
+		    <select name="departamentoBuscar" id="departamentoBuscar" onchange="location.href='SolicitarTutoriaController?dep=1'" >
+			 	<option value="null"></option>
 				<c:forEach items="${listaDepartamentos}" var="departamento">
-					<option value="${departamento.nombre} ">${departamento.nombre}</option>
+					<option value="${departamento.nombre}">${departamento.nombre}</option>
 				</c:forEach>
-			</select><br>
-			<select	name="docenteDepartamento" id="departamentoDoc">
-				<c:forEach items="${listaDocentes}" var="docente">
-				<c:choose>
-					    <c:when test="${docente.departamento.nombre.equals(request.getParameter("departamentoBuscar"))}">
-					    		<option value="${docente.cedula} "> Ing. ${docente.nombre}</option>
-					    </c:when>    
-			<c:otherwise>
-					        
-	</c:otherwise>
+			</select><br><br>
+			
+			<c:choose>
+				    <c:when test="${mostrarDocentes=='1'}">
+				    <label for="idDocente">Docente: </label>
+				    <select name="idDocente" id="idDocente" onchange="location.href='SolicitarTutoriaController?doc=1'">
+				    	<option value="null"></option>
+				    	<c:forEach items="${listaDocentes}" var="docente">
+				    		<option value="${docente.cedula}"> Ing. ${docente.nombre}</option>
+			    		</c:forEach>
+		    		</select><br><br>
+				    </c:when>    
+				<c:otherwise>
+					  
+				</c:otherwise>
 			</c:choose>
-					
-				</c:forEach>
-			</select><br>
-			<table>
-	<tr>
-		<td>Día Disponible</td>
-		<td>Hora Disponible</td>
-	</tr>
-	<c:forEach  items="${listDepartamento}"  var="departamento">
-		<tr>
-		<td>${departamento.nombre}</td>
-		<td><a href="ActualizarDepartamentoController?nombreDepartamento=${departamento.nombre} ">IIcono Refresh</a><a href="EliminarDepartamentoController?idDepartamento=${departamento.id}">Icono Borrar</a> </td>
-	</tr> 
- 	</c:forEach>
-	
-</table>
-			<input type="submit" value="Actualizar">
-	</fieldset>
+			
+			<c:choose>
+			    <c:when test="${mostrarDisponibilidad=='1'}">
+			    <label for="idDisponibilidad">Horario: </label>
+			    	<select name="idDisponibilidad" id="idDisponibilidad">
+			    		<option value="null"></option>
+			    		<c:forEach items="${listaDisponibilidad}" var="disponibilidad">
+				    		<option value="${disponibilidad.id}"> ${disponibilidad.diaSemana} ${disponibilidad.horarioInicio.transformar()} - ${disponibilidad.horarioFin.transformar()}</option>
+			    		</c:forEach>
+		    		</select><br><br>
+			    </c:when>    
+			<c:otherwise>
+						        
+				</c:otherwise>
+			</c:choose><br><br>
+			 
+			 
+			<input type="submit" value="Solicitar">
+			
+		</fieldset>
 	</form>
-	<div>
-				<a href="MenuOpcionesEstudianteController">Volver a Menu</a>
-	</div>
+	<script>
+		function seleccionarDep(nombreDep){
+			document.getElementById("departamentoBuscar").value = nombreDep;
+		}
+		function seleccionarDocente(nombreDoc){
+			document.getElementById("idDocente").value = nombreDoc;
+		}
+	</script>
 </body>
 <%@ include file="/templates/footer.jsp"%>
 </html>

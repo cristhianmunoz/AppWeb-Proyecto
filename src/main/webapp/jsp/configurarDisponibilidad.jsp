@@ -17,7 +17,7 @@
             <div>
                 <label for="dia">Dia</label><br>
                 <select name="diaSemana" id="dia">
-                    <option value="lunes">Lunes</option>
+                    <option value="Lunes">Lunes</option>
                     <option value="Martes">Martes</option>
                     <option value="Miercoles">Miércoles</option>
                     <option value="Jueves">Jueves</option>

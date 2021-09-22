@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Login</title>
 <link href="./assets/styles.css" rel="stylesheet">
 </head>
@@ -14,7 +14,7 @@
 			<div>
 				<label>Modo</label>
 				<select name="modo" id="modo" class="float_izq" >
-					<option value="Administrador" >Administrativo</option>
+					<option value="Administrador" >Administrador</option>
 					<option value="Docente" name="">Docente</option>
 					<option value="Estudiante">Estudiante</option>
 				</select><br>

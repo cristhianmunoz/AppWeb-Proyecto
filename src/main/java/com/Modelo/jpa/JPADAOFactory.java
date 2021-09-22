@@ -15,10 +15,11 @@ import com.Modelo.entidades.Persona;
 
 public class JPADAOFactory extends DAOFactory{
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	public PersonaDAO getPersonaDAO() {
 		// TODO Auto-generated method stub
-		return new JPAPersonaDAO(Persona.class);
+		return new JPAPersonaDAO();
 	}
 
 	@Override

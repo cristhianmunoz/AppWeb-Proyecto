@@ -13,7 +13,7 @@ import com.Modelo.entidades.Docente_Disponibilidad;
 public class JPADocenteDAO extends JPAPersonaDAO<Docente, Integer> implements DocenteDAO {
 
 	public JPADocenteDAO() {
-		super(Docente.class);
+		super();
 	
 	}
 	

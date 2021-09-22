@@ -1,22 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>STE</title>
+<meta charset="UTF-8">
+<title>MenÃº Docente</title>
 </head>
 <%@ include file="/templates/meta.jsp"%>
 <%@ include file="/templates/navbarProveedor.jsp"%>
 <body>
 	<div>
         <fieldset>
-            <legend>Módulos</legend>
+            <legend>MÃ³dulos</legend>
             <div>
-            	<div>Bienvenido ${ sessionScope.usuarioLogeado.getNombre()}</div><br>
+            	<div>Bienvenido ${sessionScope.usuarioLogeado.getNombre()} ${sessionScope.usuarioLogeado.getApellido()}</div><br>
                 <div><A href="ActualizarInformacionPersonalController"> Informacion Docente </A></div><br>
-                <div><A href="ListarTutoriasController"> Tutoria Académica </A></div><br>
-                <div><A href="ConfigurarDisponibilidadController"> Disponibilidad Académica </A></div><br>
+                <div><A href="ListarTutoriasController"> Tutoria AcadÃ©mica </A></div><br>
+                <div><A href="ConfigurarDisponibilidadController"> Disponibilidad AcadÃ©mica </A></div><br>
             </div>
         </fieldset>
     </div>
