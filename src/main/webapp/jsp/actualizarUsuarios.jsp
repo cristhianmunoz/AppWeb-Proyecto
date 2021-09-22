@@ -7,6 +7,8 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
+<%@ include file="/templates/meta.jsp"%>
+<%@ include file="/templates/navbarProveedor.jsp"%>
 <body>
 	<form action="ActualizarUsuarioController" method="POST">
         <div>
@@ -44,4 +46,5 @@
     </form>
    
 </body>
+<%@ include file="/templates/footer.jsp"%>
 </html>
