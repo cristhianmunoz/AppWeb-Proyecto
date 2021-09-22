@@ -9,20 +9,21 @@
 </head>
 <%@ include file="/templates/meta.jsp"%>
 <%@ include file="/templates/navbarProveedor.jsp"%>
-<body>
-	<form action="ConfigurarDisponibilidadController" method="POST">
-        <fieldset>
-            <legend> Configurar Disponibilidad</legend><br>
-            <div><h2>Docente</h2></div>
+<body >
+    <h1 > CONFIGURAR DISPONIBILIDAD</h1><br>
+    <fieldset class="content" >
+        <legend>Docente</legend>
+        <form action="ConfigurarDisponibilidadController" method="POST" class="general">
             <div>
-                <label for="dia">Dia</label><br>
+
+                <label for="dia">Dia</label>
                 <select name="diaSemana" id="dia">
-                    <option value="Lunes">Lunes</option>
+                    <option value="lunes">Lunes</option>
                     <option value="Martes">Martes</option>
                     <option value="Miercoles">Miércoles</option>
                     <option value="Jueves">Jueves</option>
                     <option value="Viernes">Viernes</option>
-                </select><br><br>
+                </select>
                 <label for="hora">Hora: </label>
                 <select name="horaInicio" id="hora">
                     <option value="7">7</option>
@@ -38,21 +39,20 @@
                     <option value="18">18</option>
                     <option value="19">19</option>
                 </select>
-                <label for="minutos">Minuto: </label>
+                <label for="minutos" >Minuto: </label>
                 <select name="minutoInicio" id="minutos">
                     <option value="0">0</option>
                     <option value="15">15</option>
                     <option value="30">30</option>
                     <option value="45">45</option>
                 </select><br><br>
-                
-                <input type="submit" value="Guardar"/>
-                
-          
+
             </div>
-        </fieldset>
-    </form><br><br>
-   	<table class="table table-success table-striped">
+            <div class="boton">
+                <input type="submit" value="Guardar"/>
+            </div>
+        </form><br><br>
+   	<table class="table table-success table-striped" >
 		<thead>
 			<tr class="align-middle">
 				<th>Id</th>
@@ -70,9 +70,12 @@
 			</tr>
 		</c:forEach>
 	</table><br><br>
-	
-	<button type="button" class="btn btn-danger mx-5"
+	<div class="boton">
+        <button type="button" class="btn btn-danger mx-5 "
 	onclick="location.href='MenuOpcionesDocenteController'"> Volver a Menú</button>
+    </div>
+	
+</fieldset>
 </body>
 <%@ include file="/templates/footer.jsp"%>
 </html>
