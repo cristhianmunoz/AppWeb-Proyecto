@@ -10,25 +10,28 @@
 <%@ include file="/templates/meta.jsp"%>
 <%@ include file="/templates/navbarProveedor.jsp"%>
 <body>
-	<h1>Actualizar Departamento</h1>
+	 <h2>Actualizar Departamento</h2>
 	<form action="ActualizarDepartamentoController" method="POST"
 		class="general">
 		<fieldset class="content">
 
 			<legend>Administrador</legend>
 			<div>
-				<label for="labelNombreActual">Nombre Departamento:</label> <input
+				<label for="labelNombreActual">Nombre Departamento</label>
+                <input
 					type="text" id="labelNombreActual" readonly="readonly"
-					name="nombreActual" value="${departamento.nombre}"> <br>
-				<label for="nombreDepartamento">Nombre Nuevo:</label> <input
+					name="nombreActual" value="${departamento.nombre}" class="float_der sizeL" style="border: rgba(176, 224, 230, 0.5) solid 1px; "> <br><br>
+				<label for="nombreDepartamento">Nombre Nuevo</label>
+                <input
 					type="text" id="nombreDepartamento" name="nombreDepartamento"
-					placeholder="e.g:Inteligencia Artificial">
+					placeholder="e.g:Inteligencia Artificial"class="float_der sizeL" style="border: rgba(176, 224, 230, 0.5) solid 1px; ">
 			</div>
-
-			<div id="enlaces">
+            <br>
+			<div id="enlaces" class="float_der">
 				<a href="ListarDepartamentosController">Volver a Listar
 					Departamentos</a>
 			</div>
+            <br>
 			<div class="boton">
 				<input type="submit" value="Actualizar">
 			</div>
