@@ -30,7 +30,7 @@ public class JPAGenericDAO<T,ID> implements GenericDAO<T, ID> {
 	public void create(T entity) {
 		em.getTransaction().begin();
 		try {
-			em.persist(entity);
+			em.merge(entity);
 			em.getTransaction().commit();
 		} catch (Exception e) {
 			System.out.println("Error" + e);
@@ -44,7 +44,7 @@ public class JPAGenericDAO<T,ID> implements GenericDAO<T, ID> {
 	}
 
 	@Override
-	public void update(T entity) throws SQLException {
+	public void update(T entity){
 		em.getTransaction().begin();
 		try {
 			em.merge(entity);
@@ -59,7 +59,7 @@ public class JPAGenericDAO<T,ID> implements GenericDAO<T, ID> {
 	}
 
 	@Override
-	public void deleteById(ID idPersona) throws SQLException {
+	public void deleteById(ID idPersona){
 		T entity = this.getById(idPersona);
 		em.getTransaction().begin();
 		em.remove(entity);
