@@ -12,8 +12,8 @@
 <%@ include file="/templates/meta.jsp"%>
 <%@ include file="/templates/navbarProveedor.jsp"%>
 <body>
-	<div>
-        <h2>MÒDULOS</h2>
+	       <div>
+        <h2>ADMINISTRADOR</h2>
         <fieldset class="content">
             <legend>Menù</legend>
             <div style="display: inline;">

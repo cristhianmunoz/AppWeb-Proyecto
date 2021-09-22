@@ -5,12 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Menú Docente</title>
+<link href="./assets/styles.css" rel="stylesheet">
 </head>
 <%@ include file="/templates/meta.jsp"%>
 <%@ include file="/templates/navbarProveedor.jsp"%>
 <body>
-	<div>
-        <fieldset>
+	    <div>
+        <h2>DOCENTE</h2>
+        <fieldset class="CONTENT">
             <legend>Módulos</legend>
             <div>
             	<div>Bienvenido ${sessionScope.usuarioLogeado.getNombre()} ${sessionScope.usuarioLogeado.getApellido()}</div><br>
