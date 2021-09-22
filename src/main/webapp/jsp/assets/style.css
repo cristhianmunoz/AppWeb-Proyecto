@@ -17,3 +17,6 @@ h2{font-size: 18px; background-color: rgb(5, 174, 253);color:white;padding-left:
 th{background-color: rgb(4, 121, 175);color: white; font-size: 15px;border-radius: 5px;}
 .float_der{float: right; border-style: none;}
 .float_izq{float:left; border-style: none;}
+
+#enlaces { font-size: 11px;display:inline-flex; }
+.sizeL{width: 300px;}

@@ -7,7 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Actualización de Usuario</title>
-
+<link href="./assets/style.css" rel="stylesheet">
 <link href="./jsp/toastr/build/toastr.min.css" rel="stylesheet">
 
 </head>
@@ -16,27 +16,33 @@
 <%@ include file="/templates/navbarProveedor.jsp"%>
 <body>
 
-	<h1>Actualizar Informacion</h1>
+	<h2>Actualizar Informacion</h2>
 	
 	<form action="ActualizarInformacionPersonalController" method="POST">
 		<fieldset class="content">
 			<legend>Docente</legend>
-			<label for="labelNombreDocente">Nombre :</label> <input type="text"
+			<label for="labelNombreDocente">Nombre</label> 
+			<input type="text"
 				id="labelNombreDocente" name="nombreDocente"
-				value="${sessionScope.usuarioLogeado.getNombre()} "> <br>
-			<label for="apellidoDocente">Apellido:</label> <input type="text"
+				value="${sessionScope.usuarioLogeado.getNombre()} "class="float_der sizeL"> <br><br>
+			<label for="apellidoDocente">Apellido</label> 
+			<input type="text"
 				id="apellidoDocente" name="apellidoDocente"
-				value="${sessionScope.usuarioLogeado.getApellido()}"> <br>
-			<label for="departamentoDoc">Departamento:</label> <select
-				name="departamentoDoc" id="departamentoDoc">
-				<c:forEach items="${listaDepartamentos}" var="departamento">
+				value="${sessionScope.usuarioLogeado.getApellido()}"class="float_der sizeL"> <br><br>
+			<label for="departamentoDoc">Departamento</label> 
+			<select name="departamentoDoc" id="departamentoDoc" class="float_der sizeL" >
+				<c:forEach items="${listaDepartamentos}" var="departamento" >
 					<option value="${departamento.nombre} ">${departamento.nombre}</option>
 				</c:forEach>
-			</select><br>
-			<div>
+			</select><br><br>
+			<div id="enlaces" class="float_der">
 				<a href="MenuOpcionesDocenteController">Volver a Menu</a>
 			</div>
-			<input type="submit" value="Actualizar">
+			<br><br>
+			<div class="boton">
+				<input type="submit" value="Actualizar">
+			</div>
+			
 		</fieldset>
 	</form>
 	<c:choose>
@@ -47,6 +53,7 @@
 	        
 	    </c:otherwise>
 	</c:choose>
+	
 </body>
 <%@ include file="/templates/footer.jsp"%>
 <script src="./jsp/toastr/build/toastr.min.js"></script>
