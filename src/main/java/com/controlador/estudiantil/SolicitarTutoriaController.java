@@ -95,7 +95,7 @@ public class SolicitarTutoriaController extends HttpServlet {
 			String nomDepartamento= request.getParameter("departamentoBuscar"); 
 			System.out.println("Busqueda docente: " + nomDepartamento);
 			List<Docente>  listaDocentes = DAOFactory.getFactory().getDocenteDAO().getDocentesByDepartamento(nomDepartamento);
-			request.setAttribute("listDocentes", listaDocentes);
+			request.setAttribute("listaDocentes", listaDocentes);
 			//getServletContext().getRequestDispatcher("/jsp/solicitarTutoria.jsp").forward(request, response);
 			
 		}
@@ -103,7 +103,9 @@ public class SolicitarTutoriaController extends HttpServlet {
 		private void listarHorarioDocente (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
 			
 			int id= Integer.parseInt(request.getParameter("idDocente")); 
+			System.out.println("estamos ready");
 			Docente docente = DAOFactory.getFactory().getDocenteDAO().getById(id);
+			System.out.println(docente.toString());
 			List<DisponibilidadTutoria>  listaHorarioDocente = DAOFactory.getFactory().getDocenteDAO().getDisponibilidadByDocente(docente);
 			request.setAttribute("listaDisponibilidad", listaHorarioDocente);
 			//getServletContext().getRequestDispatcher("/jsp/solicitarTutoria.jsp").forward(request, response);

@@ -8,27 +8,29 @@
 <link href="./assets/styles.css" rel="stylesheet">
 </head>
 <body>
-	<form action="../LoginController" method="POST" class="general">
+	<h2>INICIO DE SESIÒN</h2>
+	<form action="../LoginController" method="POST" >
 		<fieldset class="content">
 			<legend>Log in</legend>
 			<div>
 				<label>Modo</label>
-				<select name="modo" id="modo" class="float_izq" >
-					<option value="Administrador" >Administrador</option>
+				<select name="modo" id="modo" class="float_der sizeL tds" >
+					<option value="Administrador">Administrador</option>
 					<option value="Docente" name="">Docente</option>
 					<option value="Estudiante">Estudiante</option>
 				</select><br>
-	
-				<label>Cedula:</label>
-				<input type="text" name="cedula"  id="cedula"class="float_izq"/>
-	
+
+				<label>Cèdula:</label>
+				<input type="text" name="cedula"  id="cedula"class="float_der sizeL tds"/><br>
+
 				<label>Clave:</label>
-				<input type="password" name="clave" id="clave" class="float_izq"/><br>
-				<br> <input type="checkbox" name="datos" value="1"> Recordar mis datos<br>
+				<input type="password" name="clave" id="clave" class="float_der sizeL tds"/><br>
+				<br> <input type="checkbox" name="datos" value="1" > Recordar mis datos<br>
 			</div>
+			<br>
 			<div class="boton">
-				<input type="submit" value="Ingresar" class="float_der"/>
-				<input type="submit" value="Salir"class="float_izq" />
+				<input type="submit" value="Ingresar" />
+				<input type="submit" value="Salir" />
 			</div>
 		</fieldset>
 	</form>

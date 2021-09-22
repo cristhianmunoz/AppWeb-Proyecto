@@ -16,20 +16,21 @@
 			<legend>Solicitud de Tutorias</legend>
 			
 			<label for="departamentoDoc">Departamento: </label>
-		    <select name="departamentoBuscar" id="departamentoBuscar" onchange="location.href='SolicitarTutoriaController?dep=1'" >
-			 	<option value="null"></option>
+		    <select name="departamentoBuscar" id="departamentoBuscar" onclick="location.href='SolicitarTutoriaController?dep=1&departamentoBuscar=${departamento.nombre}'">
+			 	<option ></option>
 				<c:forEach items="${listaDepartamentos}" var="departamento">
-					<option value="${departamento.nombre}">${departamento.nombre}</option>
+					<option value="${departamento.nombre}" >${departamento.nombre}</option>
 				</c:forEach>
 			</select><br><br>
 			
 			<c:choose>
 				    <c:when test="${mostrarDocentes=='1'}">
 				    <label for="idDocente">Docente: </label>
-				    <select name="idDocente" id="idDocente" onchange="location.href='SolicitarTutoriaController?doc=1'">
-				    	<option value="null"></option>
+				    <option value="null"></option>
+				    <select name="idDocente" id="idDocente" placeholder="Docente" onchange="location.href='SolicitarTutoriaController?doc=1'">
+				    	<option ></option>
 				    	<c:forEach items="${listaDocentes}" var="docente">
-				    		<option value="${docente.cedula}"> Ing. ${docente.nombre}</option>
+				    		<option value="${docente.id}" onclick="location.href='SolicitarTutoriaController?doc=1&idDocente=${docente.id}'"> Ing. ${docente.nombre}</option>
 			    		</c:forEach>
 		    		</select><br><br>
 				    </c:when>    

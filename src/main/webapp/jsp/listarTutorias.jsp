@@ -8,6 +8,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title></title>
+<link href="./assets/style.css" rel="stylesheet">
 </head>
 <%@ include file="/templates/meta.jsp"%>
 <%@ include file="/templates/navbarProveedor.jsp"%>
