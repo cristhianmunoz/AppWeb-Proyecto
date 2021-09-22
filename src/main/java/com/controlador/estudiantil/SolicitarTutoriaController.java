@@ -62,7 +62,13 @@ public class SolicitarTutoriaController extends HttpServlet {
 		private void procesar (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
 			
 			List<Departamento> listaDepartamentos = DAOFactory.getFactory().getDepartamentoDAO().get();
-			request.setAttribute("ListaDepartamentos", listaDepartamentos);
+			List<Docente> listaDocentes = DAOFactory.getFactory().getDocenteDAO().get();
+			
+			for(Departamento d : listaDepartamentos) {
+				System.out.println(d.toString());
+			}
+			request.setAttribute("listaDepartamentos", listaDepartamentos);
+			request.setAttribute("listaDocentes", listaDocentes);
 			getServletContext().getRequestDispatcher("/jsp/solicitarTutoria.jsp").forward(request, response);
 			
 		}
