@@ -18,5 +18,17 @@ th{background-color: rgb(4, 121, 175);color: white; font-size: 15px;border-radiu
 .float_der{float: right; border-style: none;}
 .float_izq{float:left; border-style: none;}
 
-#enlaces { font-size: 11px;display:inline-flex; }
+#enlaces { font-size: 11px;display:inline-flex;  }
+#enlaces a{color: slategrey; margin-inline-start: 55px; font-size: 12px; margin-bottom: 5px;}
 .sizeL{width: 300px;}
+.align-middle{
+    text-align: center;
+}
+
+#title{
+    background-color: rgb(5, 174, 253);
+    color: white;
+}
+table{width: 500px;}
+
+zeL{width: 300px;}
