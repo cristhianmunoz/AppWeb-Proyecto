@@ -57,7 +57,6 @@ public class CambiarClaveController extends HttpServlet {
 				request.getRequestDispatcher("/CambiarClaveController").forward(request, response);
 			}
 		}else {
-			response.sendError(0);
 			request.getRequestDispatcher("/CambiarClaveController").forward(request, response);
 		}
 		

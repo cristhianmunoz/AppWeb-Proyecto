@@ -53,7 +53,7 @@ public class EliminarUsuarioController extends HttpServlet {
 		String id = request.getParameter("id") ;
 		
 		try {
-			Persona persona = (Persona) JPADAOFactory.getFactory().getPersonaDAO().getById(id);
+			Persona persona = (Persona) JPADAOFactory.getFactory().getPersonaDAO().getById(Integer.parseInt(id) );
 			DAOFactory.getFactory().getPersonaDAO().deleteById(persona.getId());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
