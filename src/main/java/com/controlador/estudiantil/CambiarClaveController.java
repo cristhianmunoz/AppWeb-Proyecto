@@ -44,21 +44,19 @@ public class CambiarClaveController extends HttpServlet {
 		String claveAnterior = request.getParameter("claveAnterior");
 		System.out.println(claveNueva);
 		System.out.println(claveAnterior);
-		
+		String url="";
 		if(estudiante.getClave().equals(claveAnterior)) {
 			estudiante.setClave(claveNueva);
 			try {
 				DAOFactory.getFactory().getEstudianteDAO().update(estudiante);
-				request.getRequestDispatcher("/MenuOpcionesEstudianteController").forward(request, response);
+				url="/MenuOpcionesEstudianteController";
 			} catch (SQLException e) {
-				
-				e.printStackTrace();
-				response.sendError(0);
-				request.getRequestDispatcher("/CambiarClaveController").forward(request, response);
+				url="/jsp/cambiarClave.jsp";
 			}
 		}else {
-			request.getRequestDispatcher("/CambiarClaveController").forward(request, response);
+			url="/jsp/cambiarClave.jsp";
 		}
+		request.getRequestDispatcher("/jsp/cambiarClave.jsp").forward(request, response);
 		
 	}
 	
