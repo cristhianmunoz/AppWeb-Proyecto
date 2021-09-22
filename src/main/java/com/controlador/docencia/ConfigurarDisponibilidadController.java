@@ -1,7 +1,6 @@
 package com.controlador.docencia;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -69,12 +68,7 @@ public class ConfigurarDisponibilidadController extends HttpServlet {
 							  
 		Docente_Disponibilidad docente_disponibilidad = new Docente_Disponibilidad(dispo, docente);
 		System.out.println(docente_disponibilidad.toString());
-		try {
-			DAOFactory.getFactory().getDocente_DisponibilidadDAO().update(docente_disponibilidad);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		DAOFactory.getFactory().getDocente_DisponibilidadDAO().create(docente_disponibilidad);
 		
 		request.getRequestDispatcher("/MenuOpcionesDocenteController").forward(request, response);
 		
