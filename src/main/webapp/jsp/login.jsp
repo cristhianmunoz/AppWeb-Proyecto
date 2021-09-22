@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Login</title>
-<link href="./assets/styles.css" rel="stylesheet">
+<link href="./assets/style.css" rel="stylesheet">
 </head>
 <body>
 	<h2>INICIO DE SESIÒN</h2>
