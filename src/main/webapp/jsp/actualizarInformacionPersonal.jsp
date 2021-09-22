@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Actualización de Usuario</title>
 
 <link href="./jsp/toastr/build/toastr.min.css" rel="stylesheet">
 
@@ -16,9 +16,10 @@
 <%@ include file="/templates/navbarProveedor.jsp"%>
 <body>
 
-	<h1>Actualizar Informaciï¿½n</h1>
-	<fieldset class="content">
-		<form action="ActualizarInformacionPersonalController" method="POST">
+	<h1>Actualizar Informacion</h1>
+	
+	<form action="ActualizarInformacionPersonalController" method="POST">
+		<fieldset class="content">
 			<legend>Docente</legend>
 			<label for="labelNombreDocente">Nombre :</label> <input type="text"
 				id="labelNombreDocente" name="nombreDocente"
@@ -36,16 +37,16 @@
 				<a href="MenuOpcionesDocenteController">Volver a Menu</a>
 			</div>
 			<input type="submit" value="Actualizar">
-	</fieldset>
+		</fieldset>
 	</form>
 	<c:choose>
-					    <c:when test="${seActualizo==true}">
-					    		<script  >toastr["warning"]("Are you the 6 fingered man?","Mensaje de prueba");</script>
-					    </c:when>    
-			<c:otherwise>
-					        
-					    </c:otherwise>
-			</c:choose>
+	    <c:when test="${seActualizo==true}">
+	    		<script  >toastr["warning"]("Are you the 6 fingered man?","Mensaje de prueba");</script>
+	    </c:when>    
+		<c:otherwise>
+	        
+	    </c:otherwise>
+	</c:choose>
 </body>
 <%@ include file="/templates/footer.jsp"%>
 <script src="./jsp/toastr/build/toastr.min.js"></script>
