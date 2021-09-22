@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -34,7 +35,24 @@ public class LoginController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@SuppressWarnings("unchecked")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Cookie[] cookies = request.getCookies();     // request is an instance of type 
+		if(cookies!=null) {
+			for(int i = 0; i < cookies.length; i++)
+			{ 
+				Cookie c = cookies[i];
+				if (c.getName().equals("userid"))
+				{
+					System.out.println("Validacion de cookie: " + c.getValue());
+					int userId= Integer.parseInt(c.getValue());
+					Persona persona = (Persona)DAOFactory.getFactory().getPersonaDAO().getById(userId);
+					System.out.println(persona.toString());
+					request.setAttribute("userRemembered", persona);
+				}
+			} 
+		}
+		
 		response.sendRedirect("jsp/login.jsp");
 	}
 
@@ -67,7 +85,7 @@ public class LoginController extends HttpServlet {
 				if(administrador!=null) {
 					session.setAttribute("usuarioLogeado", administrador);
 					url="/MenuOpcionesAdministradorController";
-					procesar(request, response, url);
+					procesar(request, response, url, administrador.getId());
 				}
 				
 			}if (modo.equals("Docente")) {
@@ -79,7 +97,7 @@ public class LoginController extends HttpServlet {
 				if(docente!=null) {
 					session.setAttribute("usuarioLogeado", docente);
 					url="/MenuOpcionesDocenteController";
-					procesar(request, response, url);
+					procesar(request, response, url, docente.getId());
 				}
 			}if (modo.equals("Estudiante")) {
 				try {
@@ -91,9 +109,11 @@ public class LoginController extends HttpServlet {
 				if(estudiante!=null) {
 					session.setAttribute("usuarioLogeado", estudiante);
 					url="/MenuOpcionesEstudianteController";
-					procesar(request, response, url);
+					procesar(request, response, url, estudiante.getId());
 				}
 			} 
+			
+			
 	}
 	
 	protected void reenviar(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
@@ -101,8 +121,13 @@ public class LoginController extends HttpServlet {
 		response.sendRedirect("jsp/login.jsp");
 	}
 	
-	private void procesar (HttpServletRequest request, HttpServletResponse response, String url)throws ServletException, IOException{
-		
+	private void procesar (HttpServletRequest request, HttpServletResponse response, String url, Integer id)throws ServletException, IOException{
+		if(request.getParameter("datos")!="") {
+			System.out.println("Guardando cookie");
+		    Cookie c = new Cookie("userid", String.valueOf(id));
+		    c.setMaxAge(24*60*60);
+		    response.addCookie(c);
+		}
 		getServletContext().getRequestDispatcher(url).forward(request, response);
 		
 	}
