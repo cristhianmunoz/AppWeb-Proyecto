@@ -12,11 +12,10 @@
 <%@ include file="/templates/meta.jsp"%>
 <%@ include file="/templates/navbarProveedor.jsp"%>
 <body>
+    <h1 style="font-size:15px;">LISTA TUTORIAS</h1>
+    <fieldset class="content">
+        <legend>Docente</legend>
 
-<h1>Lista Tutorias</h1>
-	<h3>Docente</h3>
-		
-	
 		<div class="container">
 			<div class="row py-3 justify-content-center"> 
 				<table class="table table-success table-striped">
@@ -30,23 +29,23 @@
 						</tr>
 					</thead>
 					<c:forEach var="tutoria" items="${tutorias}">
-						<tr class="align-middle">
-							<td>${tutoria.estudiante.cedula}</td>
-							<td>${tutoria.estudiante.nombre}</td>
-							<td>${tutoria.fecha.dia}</td>
-							<td>${tutoria.horario.hora}:${tutoria.horario.minuto}</td>
-							<td>${tutoria.estado}</td>
-							<td><button class="btn btn-primary" onclick="location.href='CargarSubastaControlador?codigo=${subasta.codigo}'">Ver</button></td>
+						<tr class="align-middle" >
+							<td class="tds">${tutoria.estudiante.cedula}</td>
+							<td class="tds">${tutoria.estudiante.nombre}</td>
+							<td class="tds">${tutoria.fecha.dia}</td>
+							<td class="tds">${tutoria.horario.hora}:${tutoria.horario.minuto}</td>
+							<td class="tds">${tutoria.estado}</td>
+							<td><button class="btn btn-primary boton" onclick="location.href='CargarSubastaControlador?codigo=${subasta.codigo}'">Ver</button></td>
 						</tr>
 					</c:forEach>
 				</table>
 			</div>
 		</div>
-	
-	<button type="button" class="btn btn-danger mx-5"
+	<br>
+	<button type="button" class="btn btn-danger mx-5 "
 	onclick="location.href='MenuOpcionesDocenteController'"> Volver a Menú</button>
 
-
+</fieldset>
 
 </body>
 <%@ include file="/templates/footer.jsp"%>

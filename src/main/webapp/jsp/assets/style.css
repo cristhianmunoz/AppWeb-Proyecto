@@ -26,9 +26,9 @@ th{background-color: rgb(4, 121, 175);color: white; font-size: 15px;border-radiu
 }
 
 #title{
-    background-color: rgb(5, 174, 253);
+    background-color: rgb(3, 116, 168);
     color: white;
 }
 table{width: 500px;}
 
-zeL{width: 300px;}
+.tds{border: rgba(176, 224, 230, 0.5) solid 1px;}
