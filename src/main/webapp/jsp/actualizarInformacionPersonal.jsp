@@ -47,7 +47,7 @@
 	</form>
 	<c:choose>
 	    <c:when test="${seActualizo==true}">
-	    		<script  >toastr["warning"]("Are you the 6 fingered man?","Mensaje de prueba");</script>
+	    		<script  >alert("Se actualizó correctamente.");</script>
 	    </c:when>    
 		<c:otherwise>
 	        
