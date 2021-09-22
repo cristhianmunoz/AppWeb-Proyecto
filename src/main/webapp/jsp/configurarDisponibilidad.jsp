@@ -7,6 +7,8 @@
 <meta charset="ISO-8859-1">
 <title>Configuración de Disponibilidad</title>
 </head>
+<%@ include file="/templates/meta.jsp"%>
+<%@ include file="/templates/navbarProveedor.jsp"%>
 <body>
 	<form action="ConfigurarDisponibilidadController" method="POST">
         <fieldset>
@@ -50,9 +52,9 @@
             </div>
         </fieldset>
     </form><br><br>
-   	<table border="1" class="table">
+   	<table class="table table-success table-striped">
 		<thead>
-			<tr>
+			<tr class="align-middle">
 				<th>Id</th>
 				<th>Dia de la Semana</th>
 				<th>Hora de Inicio</th>
@@ -60,13 +62,17 @@
 			</tr>
 		</thead>
 		<c:forEach var="disponibilidad" items="${listaDisponibilidad}">
-			<tr>
+			<tr class="align-middle">
 				<td>${disponibilidad.id}</td>
 				<td>${disponibilidad.diaSemana}</td>
 				<td>${disponibilidad.horarioInicio.transformar()}</td>
 				<td>${disponibilidad.horarioFin.transformar()}</td>
 			</tr>
 		</c:forEach>
-	</table>
+	</table><br><br>
+	
+	<button type="button" class="btn btn-danger mx-5"
+	onclick="location.href='MenuOpcionesDocenteController'"> Volver a Menú</button>
 </body>
+<%@ include file="/templates/footer.jsp"%>
 </html>
