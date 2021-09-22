@@ -98,7 +98,7 @@ public class LoginController extends HttpServlet {
 	
 	protected void reenviar(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 		
-		response.sendRedirect("/login.jsp");;
+		response.sendRedirect("jsp/login.jsp");
 	}
 	
 	private void procesar (HttpServletRequest request, HttpServletResponse response, String url)throws ServletException, IOException{
