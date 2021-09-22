@@ -10,18 +10,27 @@
 <%@ include file="/templates/meta.jsp"%>
 <%@ include file="/templates/navbarProveedor.jsp"%>
 <body>
-	<h1>Crear Departamento</h1>
-	<fieldset class="content">
-		<form action="CrearDepartamentoController" method="POST" onle>
-			<legend>Administrador</legend>
-			<label for="nombreDepartamento">Nombre Departamento</label> <input
-				type="text" id="nombreDepartamento" name="nombreDepartamento"
-				placeholder="e.g:Inteligencia Artificial">
-			<div> <a href="MenuOpcionesAdministradorController">Volver a Menú</a> </div>
-			<input type="submit" value="Crear">
-	</fieldset>
-	</form>
-	
-</body>
+        <h2>CREAR DEPARTAMENTO</h2>
+        <fieldset class="content">
+            <legend>Administrador</legend>
+            <form action="CrearDepartamentoController" method="POST" onle>
+                
+                <label for="nombreDepartamento" >Nombre Departamento</label> 
+                <div class="float_der">
+                    <input
+                    type="text" id="nombreDepartamento" name="nombreDepartamento"
+                    placeholder="e.g:Inteligencia Artificial" >
+                </div>
+            </form>
+            <br>
+            <div style="font-size: 12px; font-style: italic;" class="float_izq"> <a href="MenuOpcionesAdministradorController">Volver a Menú</a> </div>
+            <br>
+            <div class="boton">
+                <input type="submit" value="Crear">
+
+            </div>
+        </fieldset>
+        
+    </body>
 <%@ include file="/templates/footer.jsp"%>
 </html>
